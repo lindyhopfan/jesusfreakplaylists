@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="547" column="20" selection-start-line="547" selection-start-column="20" selection-end-line="552" selection-end-column="25" />
+            <state relative-caret-position="195">
+              <caret line="2830" column="18" selection-start-line="2830" selection-start-column="18" selection-end-line="2830" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -292,11 +292,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561796323452</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add through 1983">
+      <created>1561797715504</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1561797715504</updated>
+    </task>
+    <task id="LOCAL-00017" summary="other playlists">
+      <created>1561798169120</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1561798169120</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8352000" />
+    <option name="totallyTimeSpent" value="8882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1414" height="814" extended-state="0" />
@@ -339,7 +353,9 @@
     <MESSAGE value="other jquery" />
     <MESSAGE value="remove section" />
     <MESSAGE value="add 1940" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 1940" />
+    <MESSAGE value="add through 1983" />
+    <MESSAGE value="other playlists" />
+    <option name="LAST_COMMIT_MESSAGE" value="other playlists" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/main.js">
@@ -394,8 +410,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="547" column="20" selection-start-line="547" selection-start-column="20" selection-end-line="552" selection-end-column="25" />
+        <state relative-caret-position="195">
+          <caret line="2830" column="18" selection-start-line="2830" selection-start-column="18" selection-end-line="2830" selection-end-column="18" />
         </state>
       </provider>
     </entry>
