@@ -801,4 +801,20 @@ button {
   border-color: transparent transparent transparent #F45B69;
 }
 
+/*** CSS for Default visualNav HTML ***/
+/* side menu with visualNav */
+#sidemenu             { text-align: center; position: fixed; top: 20px; left: 20px; background: #444; width: 120px; z-index: 10; padding: 1px 1px 5px 1px; }
+#sidemenu ul          { list-style-type: none; margin: 0; padding: 0; }
+#sidemenu li          { margin: 5px; padding: 5px; width: 100px; text-align: center; border: transparent 1px solid; }
+#sidemenu a           { text-decoration: none; color: #bbbbff; }
+#sidemenu a:hover     { color: #fff; }
+
+#sidemenu .selected   { background: #555; }
+#sidemenu .inView     { border-color: #111; }
+
+#sidemenu hr                  { border: #555 1px solid; }
+#sidemenu .external a         { color: #aaa; }
+#sidemenu .external a:hover   { color: #ccc; }
+#sidemenu .external a.current { color: #555; pointer-events: none; cursor: default; }
+
 

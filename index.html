@@ -10,6 +10,19 @@
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
+	<script src="js/jquery.easing.1.2.js"></script>
+	<script src="js/jquery.visualNav.js"></script>
+	<script>
+		$(function(){
+			$('#sidemenu').visualNav({
+				// initialized     : function(){ console.log('init'); },
+				// beforeAnimation : function(){ console.log('beforeAnim'); },
+				// complete        : function(){ console.log('complete'); },
+				// changed         : function(){ console.log('changed'); }
+			});
+		});
+	</script>
+
 	<title>Jesus Freak Playlists</title>
 </head>
 <body>
@@ -34,6 +47,19 @@
 
 					<div class="content-wrapper">
 
+						<!-- menu with visualNav applied -->
+						<div id="sidemenu">
+							<ul>
+								<li><a href="#1950">1950</a></li>
+								<li><a href="#1960">1960</a></li>
+								<li><a href="#1970">1970</a></li>
+								<li><a href="#1980">1980</a></li>
+								<li><a href="#1990">1990</a></li>
+								<li><a href="#2000">2000</a></li>
+								<li><a href="#2000">2010</a></li>
+							</ul>
+						</div>
+
 						<section class="timeline">
 							<ul>
 								<li>
@@ -42,7 +68,7 @@
 										<iframe src="https://open.spotify.com/embed/user/josh.sarean/playlist/4pNCAzJDFPOrfeTpxwZsB8" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 									</div>
 								</li>
-								<li>
+								<li id="1950">
 									<div>
 										<time>1950 Christian Music</time>
 										<iframe src="https://open.spotify.com/embed/user/josh.sarean/playlist/5WjGUj0SeeMEeAoUortCe6" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -102,7 +128,7 @@
 
 									</div>
 								</li>
-								<li>
+								<li id="1960">
 									<div>
 										<time>1960 Christian Music</time>
 
@@ -162,7 +188,7 @@
 
 									</div>
 								</li>
-								<li>
+								<li id="1970">
 									<div>
 										<time>1970 Rock Christian</time>
 
@@ -342,7 +368,7 @@
 
 									</div>
 								</li>
-								<li>
+								<li id="1980">
 									<div>
 										<time>1980 Rock Christian</time>
 
@@ -894,7 +920,7 @@
 
 									</div>
 								</li>
-								<li>
+								<li id="1990">
 									<div>
 										<time>1990 Punk, Ska, Emo, Hardcore Christian</time>
 
@@ -1494,7 +1520,7 @@
 
 									</div>
 								</li>
-								<li>
+								<li id="2000">
 									<div>
 										<time>2000 Punk, Ska, Emo, Hardcore Christian</time>
 
@@ -2154,7 +2180,7 @@
 
 									</div>
 								</li>
-								<li>
+								<li id="2010">
 									<div>
 										<time>2010 Punk, Ska, Emo, Hardcore Christian</time>
 
