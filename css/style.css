@@ -227,7 +227,7 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 .cd-primary-nav h1 {
-  margin-top: 20px;
+  padding-top: 50px;
 }
 .no-touch .cd-primary-nav a:hover {
   background-color: #303e40;
