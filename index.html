@@ -24,17 +24,10 @@
         window.changeYear = function( year ) {
             console.log("changeYear", year);
             let yearPlaylists = _.filter(playlists, function(o) { return o.year == year; });
-
-            let tabs = $( "#tabs" ).tabs();
-            let ul = tabs.find( "ul" );
-
-            // remove old tabs
-            while (tabs.lastChild.id !== 'tab-headers') {
-                tabs.removeChild(tabs.lastChild);
-            }
-            ul.empty();
-
-            // add new tabs
+            $( "#tabs" ).empty();
+            let headerUl = $("<ul>");
+            headerUl.attr("id", "tab-headers");
+            $( "#tabs" ).append( headerUl );
             _.each(yearPlaylists, function(playlist){
 
                 let headerLi = $("<li>");
@@ -43,7 +36,7 @@
                 link.text(playlist.genre);
                 headerLi.html(link);
 
-                ul.append( headerLi );
+                $( "#tab-headers" ).append( headerLi );
 
                 let tabDiv = $("<div>");
                 tabDiv.attr("id", playlist.code);
@@ -52,14 +45,13 @@
                 tabP.text("Testing " + playlist.genre);
                 tabDiv.append( tabP );
 
-                tabs.append( tabDiv );
+                $( "#tabs" ).append( tabDiv );
             });
-
-            // refresh tabs
-            tabs.tabs( "refresh" );
+            $( "#tabs" ).tabs("refresh");
         };
         jQuery( document ).ready(function( $ ) {
             $( function() {
+                $( "#tabs" ).tabs();
                 window.changeYear(1984);
                 $( "#slider-vertical" ).slider({
                     orientation: "vertical",
@@ -104,9 +96,7 @@
 
                 <div class="row" id="portfolioItemContainer">
 
-                    <div id="tabs">
-                        <ul id="tab-headers"></ul>
-                    </div>
+                    <div id="tabs"></div>
 
                 </div>
 
