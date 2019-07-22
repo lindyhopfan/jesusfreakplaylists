@@ -22,7 +22,7 @@
     <script src="js/lodash.js"></script>
     <script>
         var changeYear = function( year ) {
-            let yearPlaylists = _.filter(playlists, function(o) { return o.year = year; });
+            let yearPlaylists = _.filter(playlists, function(o) { return o.year == year; });
             $( "#tabs" ).empty();
             let headerUl = $("<ul>");
             headerUl.attr("id", "tab-headers");
