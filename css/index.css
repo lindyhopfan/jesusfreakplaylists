@@ -6,8 +6,19 @@ table {
     font-size: 1em;
 }
 
+/* Slider */
+
 .ui-draggable, .ui-droppable {
     background-position: top;
+}
+
+#custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
 }
 
 
