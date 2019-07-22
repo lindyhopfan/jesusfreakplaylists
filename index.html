@@ -24,10 +24,17 @@
         window.changeYear = function( year ) {
             console.log("changeYear", year);
             let yearPlaylists = _.filter(playlists, function(o) { return o.year == year; });
-            $( "#tabs" ).empty();
-            let headerUl = $("<ul>");
-            headerUl.attr("id", "tab-headers");
-            $( "#tabs" ).append( headerUl );
+
+            let tabs = $( "#tabs" ).tabs();
+            let ul = tabs.find( "ul" );
+
+            // remove old tabs
+            while (tabs.lastChild.id !== 'tab-headers') {
+                tabs.removeChild(tabs.lastChild);
+            }
+            ul.empty();
+
+            // add new tabs
             _.each(yearPlaylists, function(playlist){
 
                 let headerLi = $("<li>");
@@ -36,7 +43,7 @@
                 link.text(playlist.genre);
                 headerLi.html(link);
 
-                $( "#tab-headers" ).append( headerLi );
+                ul.append( headerLi );
 
                 let tabDiv = $("<div>");
                 tabDiv.attr("id", playlist.code);
@@ -45,9 +52,11 @@
                 tabP.text("Testing " + playlist.genre);
                 tabDiv.append( tabP );
 
-                $( "#tabs" ).append( tabDiv );
+                tabs.append( tabDiv );
             });
-            $( "#tabs" ).tabs();
+
+            // refresh tabs
+            tabs.tabs( "refresh" );
         };
         jQuery( document ).ready(function( $ ) {
             $( function() {
@@ -95,7 +104,9 @@
 
                 <div class="row" id="portfolioItemContainer">
 
-                    <div id="tabs"></div>
+                    <div id="tabs">
+                        <ul id="tab-headers"></ul>
+                    </div>
 
                 </div>
 
