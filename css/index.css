@@ -21,45 +21,6 @@ table {
     line-height: 1.6em;
 }
 
-
-/* Social Links */
-
-#socialLinkSection {
-    margin-top: 3px;
-    margin-bottom: 8px;
-    display: block;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-#socialLinkContent {
-    padding-top: 10px;
-    text-align: center;
-}
-
-.links {
-    margin: 0 20px 0 20px;
-    display: inline-block;
-    font-size: 16px;
-    color: #212121;
-    border-radius: 3px;
-    padding: 5px 10px 5px 10px;
-}
-
-.links:hover {
-    background-color: lightgrey;
-}
-
-
-/* Profile Image */
-
-#profileImage {
-    width: 150px;
-    height: 150px;
-    margin: auto;
-    margin-top: calc(25%);
-}
-
 /* The various Texts */
 
 #heroName {
