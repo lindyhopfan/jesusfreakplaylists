@@ -22,7 +22,7 @@
     <script>
         jQuery( document ).ready(function( $ ) {
             $( function() {
-                let handle = $( "#custom-handle" );
+                //let handle = $( "#custom-handle" );
                 $( "#slider-vertical" ).slider({
                     orientation: "vertical",
                     range: "false",
@@ -30,12 +30,12 @@
                     min: 1949,
                     max: 2019,
                     value: 1984,
-                    create: function() {
-                        handle.text( $( this ).slider( "value" ) );
-                    },
+                    // create: function() {
+                    //     handle.text( $( this ).slider( "value" ) );
+                    // },
                     slide: function( event, ui ) {
                         $( "#year" ).val( ui.value );
-                        handle.text( ui.value );
+                        //handle.text( ui.value );
                     }
                 });
                 $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
@@ -55,7 +55,7 @@
                 </p>
 
                 <div id="slider-vertical" style="height:200px;">
-                    <div id="custom-handle" class="ui-slider-handle"></div>
+<!--                    <div id="custom-handle" class="ui-slider-handle"></div>-->
                 </div>
 
             </div>
