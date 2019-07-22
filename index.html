@@ -21,7 +21,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/lodash.js"></script>
     <script>
-        var changeYear = function( year ) {
+        window.changeYear = function( year ) {
             let yearPlaylists = _.filter(playlists, function(o) { return o.year == year; });
             $( "#tabs" ).empty();
             let headerUl = $("<ul>");
@@ -50,7 +50,7 @@
         };
         jQuery( document ).ready(function( $ ) {
             $( function() {
-                changeYear(1984);
+                window.changeYear(1984);
                 $( "#slider-vertical" ).slider({
                     orientation: "vertical",
                     range: "false",
@@ -60,7 +60,7 @@
                     value: 1984,
                     slide: function( event, ui ) {
                         $( "#year" ).val( ui.value );
-                        changeYear( ui.value );
+                        window.changeYear( ui.value );
                     }
                 });
                 $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
