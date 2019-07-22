@@ -2,11 +2,12 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Your Name</title>
-    <meta name="keywords" content="Put, tags, here">
-    <meta name="description" content="Your description here!">
-    <meta name="author" content="Your Name">
+    <title>Jesus Freak Playlists</title>
+    <meta name="keywords" content="Christian Music, Playlists, Christian Rock, Gospel">
+    <meta name="description" content="Christian Music Playlists">
+    <meta name="author" content="Joshua Payne">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="css/index.css" media="screen,projection" />
@@ -15,31 +16,42 @@
     <meta name="theme-color" content="#f5f6fa">
     <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:500,600,700" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#slider-vertical" ).slider({
+                orientation: "vertical",
+                range: "min",
+                min: 1949,
+                max: 2019,
+                value: 1984,
+                slide: function( event, ui ) {
+                    $( "#year" ).val( ui.value );
+                }
+            });
+            $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
+        } );
+    </script>
 </head>
 
 <body style="background-color: #f5f6fa">
     <div>
         <div class="row">
-<!--            <div id="profileColumn" class="col s12 l4 center">-->
-<!--                <img id="profileImage" src="./images/profile.jpg" class="z-depth-3 circle responsive-img" />-->
+            <div id="yearNavigation" class="col s4 m3 l2 center">
 
-<!--                <h2 id="heroName" class="center-align">Josh Payne</h2>-->
-<!--                <h4 id="description" class="center-align">Explore Christian Music with me</h4>-->
+                <p>
+                    <label for="year">Year:</label>
+                    <input type="text" id="year" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                </p>
 
-<!--                <div id="socialLinkSection">-->
-<!--                    <section class="tab">-->
-<!--                        <div id="socialLinkContent">-->
-<!--                            &lt;!&ndash; Your social links are dynamically generated from links.json! &ndash;&gt;-->
-<!--                        </div>-->
-<!--                    </section>-->
-<!--                </div>-->
+                <div id="slider-vertical" style="height:200px;"></div>
 
-<!--                &lt;!&ndash; Replace the email address below with your own &ndash;&gt;-->
-<!--                <a id="contactButton" class="waves-effect waves-grey btn-flat" href="mailto:josh.sarean@gmail.com"><p>Contact Me</p></a>-->
+            </div>
 
-<!--            </div>-->
-
-            <div id="portfolioColumn" class="col s12 m12 l8">
+            <div id="portfolioColumn" class="col s8 m9 l10">
 
                 <div id="portfolioTitle">
                     <p id="portfolioText">Portfolio</p>
