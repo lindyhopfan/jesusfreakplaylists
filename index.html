@@ -31,14 +31,14 @@
 
                 let headerLi = $("<li>");
                 let link = $("<a>");
-                link.attr("href", "#" + playlist.genre);
+                link.attr("href", "#" + playlist.code);
                 link.text(playlist.genre);
                 headerLi.html(link);
 
                 $( "#tab-headers" ).append( headerLi );
 
                 let tabDiv = $("<div>");
-                tabDiv.attr("id", playlist.genre);
+                tabDiv.attr("id", playlist.code);
 
                 let tabP = $("<p>");
                 tabP.text("Testing " + playlist.genre);
