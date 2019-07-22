@@ -24,10 +24,11 @@
         window.changeYear = function( year ) {
             console.log("changeYear", year);
             let yearPlaylists = _.filter(playlists, function(o) { return o.year == year; });
-            $( "#tabs" ).empty();
-            let headerUl = $("<ul>");
-            headerUl.attr("id", "tab-headers");
-            $( "#tabs" ).append( headerUl );
+
+            var tabs = $( "#tabs" ).tabs();
+            var ul = tabs.find( "ul" );
+            ul.empty();
+            tabs.find( "div" ).remove();
             _.each(yearPlaylists, function(playlist){
 
                 let headerLi = $("<li>");
@@ -36,7 +37,7 @@
                 link.text(playlist.genre);
                 headerLi.html(link);
 
-                $( "#tab-headers" ).append( headerLi );
+                ul.append( headerLi );
 
                 let tabDiv = $("<div>");
                 tabDiv.attr("id", playlist.code);
@@ -45,9 +46,9 @@
                 tabP.text("Testing " + playlist.genre);
                 tabDiv.append( tabP );
 
-                $( "#tabs" ).append( tabDiv );
+                tabs.append( tabDiv );
             });
-            $( "#tabs" ).tabs("refresh");
+            tabs.tabs( "refresh" );
         };
         jQuery( document ).ready(function( $ ) {
             $( function() {
