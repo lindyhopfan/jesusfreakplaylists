@@ -29,14 +29,14 @@
                 max: 2019,
                 value: 1984,
                 create: function() {
-                    handle.text( $( this ).slider( "year" ) );
+                    handle.text( $( this ).slider( "value" ) );
                 },
                 slide: function( event, ui ) {
-                    $( "#year" ).val( ui.year );
-                    handle.text( ui.year );
+                    $( "#year" ).val( ui.value );
+                    handle.text( ui.value );
                 }
             });
-            $( "#year" ).val( $( "#slider-vertical" ).slider( "year" ) );
+            $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
         } );
     </script>
 </head>
