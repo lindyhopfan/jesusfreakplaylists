@@ -2,133 +2,149 @@
 <html>
 
 <head>
-    <title>Jesus Freak Playlists</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="Christian Music, Playlists, Christian Rock, Gospel">
-    <meta name="description" content="Christian Music Playlists">
-    <meta name="author" content="Joshua Payne">
-    <meta name="theme-color" content="#f5f6fa">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/index.css" media="screen,projection" />
-    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:500,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/lodash.js"></script>
-    <script>
-        window.changeYear = function( year ) {
-            console.log("changeYear", year);
-            let yearPlaylists = _.filter(playlists, function(o) { return o.year == year; });
+  <title>Jesus Freak Playlists</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="Christian Music, Playlists, Christian Rock, Gospel">
+  <meta name="description" content="Christian Music Playlists">
+  <meta name="author" content="Joshua Payne">
+  <meta name="theme-color" content="#f5f6fa">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/index.css" media="screen,projection"/>
+  <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/lodash.js"></script>
+  <script>
+    window.changeYear = function (year) {
+      console.log("changeYear", year);
+      let yearPlaylists = _.filter(playlists, function (o) {
+        return o.year == year;
+      });
 
-            var tabs = $( "#tabs" ).tabs();
-            var ul = tabs.find( "ul" );
-            ul.empty();
-            tabs.find( "div" ).remove();
-            _.each(yearPlaylists, function(playlist){
+      var tabs = $("#tabs").tabs();
+      var ul = tabs.find("ul");
+      ul.empty();
+      tabs.find("div").remove();
+      _.each(yearPlaylists, function (playlist) {
 
-                let headerLi = $("<li>");
-                let link = $("<a>");
-                link.attr("href", "#" + playlist.code);
-                link.text(playlist.genre);
-                headerLi.html(link);
-
-                ul.append( headerLi );
-
-                let tabDiv = $("<div>");
-                tabDiv.attr("id", playlist.code);
-
-                let tabP = $("<p>");
-                tabP.text(playlist.year + " " + playlist.genre);
-                tabDiv.append( tabP );
-
-                let iframe = $("<iframe>");
-                iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
-                iframe.attr("width", "300");
-                iframe.attr("height", "380");
-                iframe.attr("iframeborder", "0");
-                iframe.attr("allowtransparency", true);
-                iframe.attr("allow", "encrypted-media");
-
-                tabDiv.append( iframe );
-
-                tabs.append( tabDiv );
-            });
-            tabs.tabs( "refresh" );
-            tabs.tabs( "option", "active", 0 );
-        };
-        jQuery( document ).ready(function( $ ) {
-            $( function() {
-                $( "#tabs" ).tabs();
-                var handle = $( "#custom-handle" );
-                window.changeYear(1984);
-                $( "#slider-vertical" ).slider({
-                    orientation: "vertical",
-                    range: "false",
-                    animate: "fast",
-                    min: 1949,
-                    max: 2019,
-                    value: 1984,
-                    create: function() {
-                        handle.text( $( this ).slider( "value" ) );
-                    },
-                    change: function( event, ui ) {
-                        window.changeYear( ui.value );
-                    },
-                    slide: function( event, ui ) {
-                        $( "#year" ).val( ui.value );
-                        handle.text( ui.value );
-                    }
-                });
-                $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
-            } );
+        var request = $.ajax({
+          method: "GET",
+          url: 'https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks',
+          headers: {
+            'Authorization': 'Bearer ' + accessToken
+          }
         });
-    </script>
+        request.done(function( response ) {
+          console.log(response);
+        });
+
+        let headerLi = $("<li>");
+        let link = $("<a>");
+        link.attr("href", "#" + playlist.code);
+        link.text(playlist.genre);
+        headerLi.html(link);
+
+        ul.append(headerLi);
+
+        let tabDiv = $("<div>");
+        tabDiv.attr("id", playlist.code);
+
+        let tabP = $("<p>");
+        tabP.text(playlist.year + " " + playlist.genre);
+        tabDiv.append(tabP);
+
+        let iframe = $("<iframe>");
+        iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
+        iframe.attr("width", "300");
+        iframe.attr("height", "380");
+        iframe.attr("iframeborder", "0");
+        iframe.attr("allowtransparency", true);
+        iframe.attr("allow", "encrypted-media");
+
+        tabDiv.append(iframe);
+
+        tabs.append(tabDiv);
+      });
+      tabs.tabs("refresh");
+      tabs.tabs("option", "active", 0);
+    };
+    jQuery(document).ready(function ($) {
+      $(function () {
+        $("#tabs").tabs();
+        var handle = $("#custom-handle");
+        window.changeYear(1984);
+        $("#slider-vertical").slider({
+          orientation: "vertical",
+          range: "false",
+          animate: "fast",
+          min: 1949,
+          max: 2019,
+          value: 1984,
+          create: function () {
+            handle.text($(this).slider("value"));
+          },
+          change: function (event, ui) {
+            window.changeYear(ui.value);
+          },
+          slide: function (event, ui) {
+            $("#year").val(ui.value);
+            handle.text(ui.value);
+          }
+        });
+        $("#year").val($("#slider-vertical").slider("value"));
+      });
+    });
+  </script>
 </head>
 
 <body style="background-color: #f5f6fa">
-    <div>
-        <div class="row">
-            <div id="yearNavigation" class="col s1 m1 l1 center">
+<div>
+  <div class="row">
+    <div id="yearNavigation" class="col s1 m1 l1 center">
 
-                <p style="margin-top:30px; margin-bottom:-10px;">
-                    Use slider to pick a year.
-                </p>
+      <p style="margin-top:30px; margin-bottom:-10px;">
+        Use slider to pick a year.
+      </p>
 
-                <div id="slider-vertical" style="height:600px;width:50px;margin-top:35px;">
-                    <div id="custom-handle" class="ui-slider-handle" style="height:30px;width:56px"></div>
-                </div>
+      <div id="slider-vertical" style="height:600px;width:50px;margin-top:35px;">
+        <div id="custom-handle" class="ui-slider-handle" style="height:30px;width:56px"></div>
+      </div>
 
-            </div>
-
-            <div id="portfolioColumn" class="col s11 m11 l11">
-
-                <div id="portfolioTitle">
-                    <p id="portfolioText">Jesus Freak Playlists</p>
-                    <p>
-                        <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
-                        <span><input type="text" id="year" readonly style="border:0; color:#f6931f; font-weight:bold; font-size: 2rem; display:inline; margin-bottom: 0px;"></span>
-                    </p>
-                </div>
-
-                <div class="row" id="portfolioItemContainer">
-
-                    <div id="tabs">
-                        <ul id="tab-headers"></ul>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
     </div>
 
-    <script type="text/javascript" src="js/playlists.js"></script>
+    <div id="portfolioColumn" class="col s11 m11 l11">
+
+      <div id="portfolioTitle">
+        <p id="portfolioText">Jesus Freak Playlists</p>
+        <p>
+          <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
+          <span><input type="text" id="year" readonly
+                       style="border:0; color:#f6931f; font-weight:bold; font-size: 2rem; display:inline; margin-bottom: 0px;"></span>
+        </p>
+      </div>
+
+      <div class="row" id="portfolioItemContainer">
+
+        <div id="tabs">
+          <ul id="tab-headers"></ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/access.js"></script>
+<script type="text/javascript" src="js/playlists.js"></script>
 </body>
 
 </html>
