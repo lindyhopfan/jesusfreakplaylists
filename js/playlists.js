@@ -1,7 +1,7 @@
 var playlists = {
   "4pNCAzJDFPOrfeTpxwZsB8": {
     "code": "4pNCAzJDFPOrfeTpxwZsB8",
-    "year": "1940s",
+    "year": "1949",
     "genre": "Christian Music"
   },
   "5WjGUj0SeeMEeAoUortCe6": {
