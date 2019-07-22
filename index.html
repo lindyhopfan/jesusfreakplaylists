@@ -20,24 +20,26 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        $( function() {
-            let handle = $( "#custom-handle" );
-            $( "#slider-vertical" ).slider({
-                orientation: "vertical",
-                range: "min",
-                min: 1949,
-                max: 2019,
-                value: 1984,
-                create: function() {
-                    handle.text( $( this ).slider( "value" ) );
-                },
-                slide: function( event, ui ) {
-                    $( "#year" ).val( ui.value );
-                    handle.text( ui.value );
-                }
-            });
-            $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
-        } );
+        jQuery( document ).ready(function( $ ) {
+            $( function() {
+                let handle = $( "#custom-handle" );
+                $( "#slider-vertical" ).slider({
+                    orientation: "vertical",
+                    range: "min",
+                    min: 1949,
+                    max: 2019,
+                    value: 1984,
+                    create: function() {
+                        handle.text( $( this ).slider( "value" ) );
+                    },
+                    slide: function( event, ui ) {
+                        $( "#year" ).val( ui.value );
+                        handle.text( ui.value );
+                    }
+                });
+                $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
+            } );
+        });
     </script>
 </head>
 
