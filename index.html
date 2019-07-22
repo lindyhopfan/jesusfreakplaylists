@@ -45,12 +45,12 @@
                 tabDiv.append( tabP );
 
                 $( "#tabs" ).append( tabDiv );
+                $( "#tabs" ).tabs();
 
             });
         };
         jQuery( document ).ready(function( $ ) {
             $( function() {
-                $( "#tabs" ).tabs();
                 changeYear(1984);
                 $( "#slider-vertical" ).slider({
                     orientation: "vertical",
