@@ -43,8 +43,18 @@
                 tabDiv.attr("id", playlist.code);
 
                 let tabP = $("<p>");
-                tabP.text("Testing " + playlist.genre);
+                tabP.text(playlist.year + " " + playlist.genre);
                 tabDiv.append( tabP );
+
+                let iframe = $("<iframe>");
+                iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
+                iframe.attr("width", "300");
+                iframe.attr("height", "380");
+                iframe.attr("iframeborder", "0");
+                iframe.attr("allowtransparency", true);
+                iframe.attr("allow", "encrypted-media");
+
+                tabDiv.append( iframe );
 
                 tabs.append( tabDiv );
             });
