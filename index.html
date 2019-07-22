@@ -64,6 +64,7 @@
         jQuery( document ).ready(function( $ ) {
             $( function() {
                 $( "#tabs" ).tabs();
+                var handle = $( "#custom-handle" );
                 window.changeYear(1984);
                 $( "#slider-vertical" ).slider({
                     orientation: "vertical",
@@ -72,11 +73,15 @@
                     min: 1949,
                     max: 2019,
                     value: 1984,
+                    create: function() {
+                        handle.text( $( this ).slider( "value" ) );
+                    },
                     change: function( event, ui ) {
                         window.changeYear( ui.value );
                     },
                     slide: function( event, ui ) {
                         $( "#year" ).val( ui.value );
+                        handle.text( ui.value );
                     }
                 });
                 $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
@@ -94,7 +99,9 @@
                     <input type="text" id="year" readonly style="border:0; color:#f6931f; font-weight:bold;">
                 </p>
 
-                <div id="slider-vertical" style="height:200px;"></div>
+                <div id="slider-vertical" style="height:400px;width:50px">
+                    <div id="custom-handle" class="ui-slider-handle" style="height:30px;width:56px"></div>
+                </div>
 
             </div>
 
