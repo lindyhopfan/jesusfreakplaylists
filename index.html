@@ -59,9 +59,11 @@
                     min: 1949,
                     max: 2019,
                     value: 1984,
+                    change: function( event, ui ) {
+                        window.changeYear( ui.value );
+                    },
                     slide: function( event, ui ) {
                         $( "#year" ).val( ui.value );
-                        window.changeYear( ui.value );
                     }
                 });
                 $( "#year" ).val( $( "#slider-vertical" ).slider( "value" ) );
