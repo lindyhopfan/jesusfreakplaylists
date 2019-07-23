@@ -24,18 +24,19 @@
   <script src="js/lodash.js"></script>
   <script>
     window.changeYear = function (year) {
-      console.log("changeYear", year);
       let yearPlaylists = _.filter(playlists, function (o) {
         return o.year == year;
       });
 
-      var tabs = $("#tabs").tabs();
-      var ul = tabs.find("ul");
+      let tabs = $("#tabs").tabs();
+      let ul = tabs.find("ul");
       ul.empty();
       tabs.find("div").remove();
       _.each(yearPlaylists, function (playlist) {
 
-        var request = $.ajax({
+        let albums = {};
+
+        let request = $.ajax({
           method: "GET",
           url: 'https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks',
           headers: {
@@ -43,7 +44,20 @@
           }
         });
         request.done(function( response ) {
-          console.log(response);
+
+          _.each(response.items, function (item) {
+            let id = _.get(item, "track.album.id");
+            if(!_.includes(_.keys(albums), id)){
+              let album = {
+                "id": id,
+                "artist": _.get(item, "track.album.artists.0.name"),
+                "name": _.get(item, "track.album.name"),
+                "img": _.get(item, "track.album.images.1.url")
+              };
+              albums[id] = album;
+            }
+          });
+
         });
 
         let headerLi = $("<li>");
@@ -72,6 +86,27 @@
         tabDiv.append(iframe);
 
         tabs.append(tabDiv);
+
+        _.each(albums, function(album){
+          let albumDiv = $("<div>");
+          albumDiv.attr("id", album.id);
+
+          let albumArtistLabel = $("<p>");
+          albumArtistLabel.text = album.artist;
+
+          let albumImage = $("<div>");
+          albumImage.attr("src", album.img);
+
+          let albumNameLabel = $("<p>");
+          albumNameLabel.text = album.name;
+
+          albumDiv.append(albumArtistLabel);
+          albumDiv.append(albumImage);
+          albumDiv.append(albumNameLabel);
+
+          tabs.append(albumDiv);
+
+        });
       });
       tabs.tabs("refresh");
       tabs.tabs("option", "active", 0);
@@ -79,7 +114,7 @@
     jQuery(document).ready(function ($) {
       $(function () {
         $("#tabs").tabs();
-        var handle = $("#custom-handle");
+        let handle = $("#custom-handle");
         window.changeYear(1984);
         $("#slider-vertical").slider({
           orientation: "vertical",
