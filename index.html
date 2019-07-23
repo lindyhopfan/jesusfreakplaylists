@@ -87,12 +87,12 @@
 
         console.log("albums", albums);
 
-        _.each(albums, function(album){
+        _.each(albums, function(album, id){
 
           console.log("album", album);
 
           let albumDiv = $("<div>");
-          albumDiv.attr("id", album.id);
+          albumDiv.attr("id", id);
 
           let albumArtistLabel = $("<p>");
           albumArtistLabel.text = album.artist;
