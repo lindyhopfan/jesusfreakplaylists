@@ -12,6 +12,7 @@ $.changeYear = function (year) {
 
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
+  console.log("ready to check for access token");
   console.log("hash", window.location.hash.substr(1));
 
 
