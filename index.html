@@ -89,10 +89,16 @@
             albumDiv.attr("id", album.id);
             albumDiv.attr("style", "display:inline-block;");
 
+            let imageContainer = $("<p>");
             let albumImage = $("<img>");
             albumImage.attr("src", album.img);
+            imageContainer.append(albumImage);
 
-            albumDiv.append(albumImage);
+            albumDiv.append(imageContainer);
+
+            let albumLabel = $("<p>");
+            albumLabel.text = album.artist + " : " + album.name;
+            albumDiv.append(albumLabel);
 
             albumContainerDiv.append(albumDiv);
 
