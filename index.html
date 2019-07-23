@@ -34,6 +34,37 @@
       tabs.find("div").remove();
       _.each(yearPlaylists, function (playlist) {
 
+        let headerLi = $("<li>");
+        let link = $("<a>");
+        link.attr("href", "#" + playlist.code);
+        link.text(playlist.genre);
+        headerLi.html(link);
+
+        ul.append(headerLi);
+
+        let tabDiv = $("<div>");
+        tabDiv.attr("id", playlist.code);
+
+        let tabP = $("<p>");
+        tabP.text(playlist.year + " " + playlist.genre);
+        tabDiv.append(tabP);
+
+        let iframe = $("<iframe>");
+        iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
+        iframe.attr("width", "300");
+        iframe.attr("height", "380");
+        iframe.attr("iframeborder", "0");
+        iframe.attr("allowtransparency", true);
+        iframe.attr("allow", "encrypted-media");
+
+        tabDiv.append(iframe);
+
+        tabs.append(tabDiv);
+      });
+      tabs.tabs("refresh");
+      tabs.tabs("option", "active", 0);
+
+      _.each(yearPlaylists, function(playlist){
         var albums = {};
 
         let request = $.ajax({
@@ -58,32 +89,11 @@
             }
           });
 
-          let headerLi = $("<li>");
-          let link = $("<a>");
-          link.attr("href", "#" + playlist.code);
-          link.text(playlist.genre);
-          headerLi.html(link);
-
-          ul.append(headerLi);
-
-          let tabDiv = $("<div>");
-          tabDiv.attr("id", playlist.code);
-
-          let tabP = $("<p>");
-          tabP.text(playlist.year + " " + playlist.genre);
-          tabDiv.append(tabP);
-
-          let iframe = $("<iframe>");
-          iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
-          iframe.attr("width", "300");
-          iframe.attr("height", "380");
-          iframe.attr("iframeborder", "0");
-          iframe.attr("allowtransparency", true);
-          iframe.attr("allow", "encrypted-media");
-
-          tabDiv.append(iframe);
-
           _.each(albums, function (album) {
+
+            console.log("album", album);
+
+            let tabDiv = $("#" + playlist.code);
 
             let albumDiv = $("<div>");
             albumDiv.attr("id", album.id);
@@ -105,15 +115,8 @@
 
           });
 
-          tabs.append(tabDiv);
-
-          tabs.tabs("refresh");
-          tabs.tabs("option", "active", 0);
-
         });
-
       });
-
     };
     jQuery(document).ready(function ($) {
       $(function () {
