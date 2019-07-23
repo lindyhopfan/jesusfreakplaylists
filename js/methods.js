@@ -12,6 +12,7 @@ $.changeYear = function (year) {
 
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
+  let hasAccessToken = !_.empty($.urlParam('token'));
   ul.empty();
   tabs.find("div").remove();
   _.each(yearPlaylists, function (playlist) {
@@ -31,12 +32,26 @@ $.changeYear = function (year) {
     tabP.text(playlist.year + " " + playlist.genre);
     tabDiv.append(tabP);
 
+    if(!hasAccessToken){
+
+      let iframe = $("<iframe>");
+      iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
+      iframe.attr("width", "300");
+      iframe.attr("height", "380");
+      iframe.attr("iframeborder", "0");
+      iframe.attr("allowtransparency", true);
+      iframe.attr("allow", "encrypted-media");
+
+      tabDiv.append(iframe);
+    }
+
     tabs.append(tabDiv);
   });
   tabs.tabs("refresh");
   tabs.tabs("option", "active", 0);
 
-  if($.urlParam('token')){
+  if(hasAccessToken){
+
     _.each(yearPlaylists, function(playlist){
       var albums = {};
 
