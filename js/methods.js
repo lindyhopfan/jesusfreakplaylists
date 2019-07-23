@@ -1,5 +1,5 @@
 $.urlParam = function (name, queryString) {
-  var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+  var results = new RegExp(name + '=([^&#]*)')
   .exec(queryString);
 
   return (results !== null) ? results[1] || 0 : false;
