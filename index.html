@@ -85,10 +85,9 @@
 
         tabDiv.append(iframe);
 
-        console.log("albums length", albums.length);
+        _.each(_.keys(albums), function (key) {
 
-        _.each(albums, function (album, id) {
-
+          let album = albums[key];
           console.log("album", album);
 
           let albumDiv = $("<div>");
