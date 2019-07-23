@@ -47,6 +47,8 @@
 
           _.each(response.items, function (item) {
             let id = _.get(item, "track.album.id");
+            console.log("item");
+            console.log(_.keys(albums));
             if(!_.includes(_.keys(albums), id)){
               let album = {
                 "id": id,
@@ -85,6 +87,9 @@
         iframe.attr("allow", "encrypted-media");
 
         tabDiv.append(iframe);
+
+        console.log("all");
+        console.log(albums);
 
         _.each(albums, function (album) {
 
