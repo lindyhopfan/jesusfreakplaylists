@@ -54,7 +54,7 @@
                 "name": _.get(item, "track.album.name"),
                 "img": _.get(item, "track.album.images.1.url")
               };
-              albums.id = album;
+              albums[id] = album;
             }
           });
 
@@ -87,7 +87,7 @@
 
         console.log("albums", albums);
         console.log(typeof albums);
-        console.log("keys", _.keys(albums));
+        console.log("keysIn", _.keysIn(albums));
 
         _.each(_.keys(albums), function (key) {
 
