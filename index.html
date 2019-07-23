@@ -85,10 +85,8 @@
 
           _.each(albums, function (album) {
 
-            console.log("album", album);
-
             let albumDiv = $("<div>");
-            albumDiv.attr("id", id);
+            albumDiv.attr("id", album.id);
 
             let albumArtistLabel = $("<p>");
             albumArtistLabel.text = album.artist;
@@ -102,8 +100,6 @@
             albumDiv.append(albumArtistLabel);
             albumDiv.append(albumImage);
             albumDiv.append(albumNameLabel);
-
-            console.log("ready to append albumDiv", albumDiv);
 
             tabDiv.append(albumDiv);
 
