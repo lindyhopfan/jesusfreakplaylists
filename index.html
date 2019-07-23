@@ -23,102 +23,6 @@
           src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script src="js/lodash.js"></script>
   <script>
-    window.changeYear = function (year) {
-      let yearPlaylists = _.filter(playlists, function (o) {
-        return o.year == year;
-      });
-
-      let tabs = $("#tabs").tabs();
-      let ul = tabs.find("ul");
-      ul.empty();
-      tabs.find("div").remove();
-      _.each(yearPlaylists, function (playlist) {
-
-        let headerLi = $("<li>");
-        let link = $("<a>");
-        link.attr("href", "#" + playlist.code);
-        link.text(playlist.genre);
-        headerLi.html(link);
-
-        ul.append(headerLi);
-
-        let tabDiv = $("<div>");
-        tabDiv.attr("id", playlist.code);
-
-        let tabP = $("<p>");
-        tabP.text(playlist.year + " " + playlist.genre);
-        tabDiv.append(tabP);
-
-        tabs.append(tabDiv);
-      });
-      tabs.tabs("refresh");
-      tabs.tabs("option", "active", 0);
-
-      _.each(yearPlaylists, function(playlist){
-        var albums = {};
-
-        let request = $.ajax({
-          method: "GET",
-          url: 'https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks',
-          headers: {
-            'Authorization': 'Bearer ' + accessToken
-          }
-        });
-        request.done(function( response ) {
-
-          _.each(response.items, function (item) {
-            let id = _.get(item, "track.album.id");
-            if(!_.includes(_.keys(albums), id)){
-              let album = {
-                "id": id,
-                "artist": _.get(item, "track.album.artists.0.name"),
-                "name": _.get(item, "track.album.name"),
-                "img": _.get(item, "track.album.images.1.url")
-              };
-              albums[id] = album;
-            }
-          });
-
-          let tabDiv = $("#" + playlist.code);
-
-          let albumContainerDiv = $("<div>");
-
-          _.each(albums, function (album) {
-
-            let albumDiv = $("<div>");
-            albumDiv.attr("id", album.id);
-            albumDiv.attr("style", "display:inline-block;");
-
-            let imageContainer = $("<p>");
-            let albumImage = $("<img>");
-            albumImage.attr("src", album.img);
-            imageContainer.append(albumImage);
-
-            albumDiv.append(imageContainer);
-
-            let albumLabel = $("<p>");
-            albumLabel.text(album.artist + ": " + album.name);
-            albumDiv.append(albumLabel);
-
-            albumContainerDiv.append(albumDiv);
-
-          });
-
-          tabDiv.append(albumContainerDiv);
-
-          let iframe = $("<iframe>");
-          iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
-          iframe.attr("width", "300");
-          iframe.attr("height", "380");
-          iframe.attr("iframeborder", "0");
-          iframe.attr("allowtransparency", true);
-          iframe.attr("allow", "encrypted-media");
-
-          tabDiv.append(iframe);
-
-        });
-      });
-    };
     jQuery(document).ready(function ($) {
       $(function () {
         $("#tabs").tabs();
@@ -165,13 +69,21 @@
 
     <div id="portfolioColumn" class="col s11 m11 l11">
 
-      <div id="portfolioTitle">
+      <div id="portfolioTitle" class="col s6 m6 l6">
         <p id="portfolioText">Jesus Freak Playlists</p>
         <p>
           <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
           <span><input type="text" id="year" readonly
                        style="border:0; color:#f6931f; font-weight:bold; font-size: 2rem; display:inline; margin-bottom: 0px;"></span>
         </p>
+      </div>
+
+      <div id="authSpacer" class="col s3 m3 l3">
+
+      </div>
+
+      <div id="authLink" class="col s2 m2 l2">
+        <p><a href="https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com">Login to Spotify to see album art</a></p>
       </div>
 
       <div class="row" id="portfolioItemContainer">
@@ -186,7 +98,7 @@
   </div>
 </div>
 
-<script type="text/javascript" src="js/access.js"></script>
+<script type="text/javascript" src="js/methods.js"></script>
 <script type="text/javascript" src="js/playlists.js"></script>
 </body>
 
