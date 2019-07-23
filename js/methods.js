@@ -12,7 +12,7 @@ $.changeYear = function (year) {
 
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
-  let hasAccessToken = !_.isEmpty($.urlParam('token'));
+  let hasAccessToken = !_.isEmpty($.urlParam('access_token'));
   ul.empty();
   tabs.find("div").remove();
   _.each(yearPlaylists, function (playlist) {
