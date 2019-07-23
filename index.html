@@ -60,8 +60,6 @@
 
         });
 
-        console.log("albums for playlist", playlist.code, albums);
-
         let headerLi = $("<li>");
         let link = $("<a>");
         link.attr("href", "#" + playlist.code);
@@ -88,6 +86,9 @@
         tabDiv.append(iframe);
 
         _.each(albums, function(album){
+
+          console.log("album", album);
+
           let albumDiv = $("<div>");
           albumDiv.attr("id", album.id);
 
