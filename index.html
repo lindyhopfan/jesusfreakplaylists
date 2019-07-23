@@ -47,8 +47,6 @@
 
           _.each(response.items, function (item) {
             let id = _.get(item, "track.album.id");
-            console.log("item");
-            console.log(_.keys(albums));
             if(!_.includes(_.keys(albums), id)){
               let album = {
                 "id": id,
@@ -56,71 +54,70 @@
                 "name": _.get(item, "track.album.name"),
                 "img": _.get(item, "track.album.images.1.url")
               };
-              console.log("id", id);
               albums[id] = album;
             }
           });
 
+          let headerLi = $("<li>");
+          let link = $("<a>");
+          link.attr("href", "#" + playlist.code);
+          link.text(playlist.genre);
+          headerLi.html(link);
+
+          ul.append(headerLi);
+
+          let tabDiv = $("<div>");
+          tabDiv.attr("id", playlist.code);
+
+          let tabP = $("<p>");
+          tabP.text(playlist.year + " " + playlist.genre);
+          tabDiv.append(tabP);
+
+          let iframe = $("<iframe>");
+          iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
+          iframe.attr("width", "300");
+          iframe.attr("height", "380");
+          iframe.attr("iframeborder", "0");
+          iframe.attr("allowtransparency", true);
+          iframe.attr("allow", "encrypted-media");
+
+          tabDiv.append(iframe);
+
+          _.each(albums, function (album) {
+
+            console.log("album", album);
+
+            let albumDiv = $("<div>");
+            albumDiv.attr("id", id);
+
+            let albumArtistLabel = $("<p>");
+            albumArtistLabel.text = album.artist;
+
+            let albumImage = $("<img>");
+            albumImage.attr("src", album.img);
+
+            let albumNameLabel = $("<p>");
+            albumNameLabel.text = album.name;
+
+            albumDiv.append(albumArtistLabel);
+            albumDiv.append(albumImage);
+            albumDiv.append(albumNameLabel);
+
+            console.log("ready to append albumDiv", albumDiv);
+
+            tabDiv.append(albumDiv);
+
+          });
+
+          tabs.append(tabDiv);
+
+          tabs.tabs("refresh");
+          tabs.tabs("option", "active", 0);
+
         });
 
-        let headerLi = $("<li>");
-        let link = $("<a>");
-        link.attr("href", "#" + playlist.code);
-        link.text(playlist.genre);
-        headerLi.html(link);
-
-        ul.append(headerLi);
-
-        let tabDiv = $("<div>");
-        tabDiv.attr("id", playlist.code);
-
-        let tabP = $("<p>");
-        tabP.text(playlist.year + " " + playlist.genre);
-        tabDiv.append(tabP);
-
-        let iframe = $("<iframe>");
-        iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
-        iframe.attr("width", "300");
-        iframe.attr("height", "380");
-        iframe.attr("iframeborder", "0");
-        iframe.attr("allowtransparency", true);
-        iframe.attr("allow", "encrypted-media");
-
-        tabDiv.append(iframe);
-
-        console.log("all");
-        console.log(albums);
-
-        _.each(albums, function (album) {
-
-          console.log("album", album);
-
-          let albumDiv = $("<div>");
-          albumDiv.attr("id", id);
-
-          let albumArtistLabel = $("<p>");
-          albumArtistLabel.text = album.artist;
-
-          let albumImage = $("<img>");
-          albumImage.attr("src", album.img);
-
-          let albumNameLabel = $("<p>");
-          albumNameLabel.text = album.name;
-
-          albumDiv.append(albumArtistLabel);
-          albumDiv.append(albumImage);
-          albumDiv.append(albumNameLabel);
-
-          console.log("ready to append albumDiv", albumDiv);
-
-          tabDiv.append(albumDiv);
-
-        });
-
-        tabs.append(tabDiv);
       });
-      tabs.tabs("refresh");
-      tabs.tabs("option", "active", 0);
+
     };
     jQuery(document).ready(function ($) {
       $(function () {
