@@ -1,6 +1,6 @@
-$.urlParam = function (name) {
+$.urlParam = function (name, queryString) {
   var results = new RegExp('[\?&]' + name + '=([^&#]*)')
-  .exec(window.location.search);
+  .exec(queryString);
 
   return (results !== null) ? results[1] || 0 : false;
 };
@@ -12,7 +12,12 @@ $.changeYear = function (year) {
 
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
-  let hasAccessToken = !_.isEmpty($.urlParam('access_token'));
+  console.log("hash", window.location.hash.substr(1));
+
+
+  let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
+  console.log("accessToken", accessToken);
+
   ul.empty();
   tabs.find("div").remove();
   _.each(yearPlaylists, function (playlist) {
@@ -32,7 +37,7 @@ $.changeYear = function (year) {
     tabP.text(playlist.year + " " + playlist.genre);
     tabDiv.append(tabP);
 
-    if(!hasAccessToken){
+    if(!accessToken){
 
       let iframe = $("<iframe>");
       iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
@@ -50,7 +55,7 @@ $.changeYear = function (year) {
   tabs.tabs("refresh");
   tabs.tabs("option", "active", 0);
 
-  if(hasAccessToken){
+  if(accessToken){
 
     _.each(yearPlaylists, function(playlist){
       var albums = {};
@@ -59,7 +64,7 @@ $.changeYear = function (year) {
         method: "GET",
         url: 'https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks',
         headers: {
-          'Authorization': 'Bearer ' + $.urlParam('token')
+          'Authorization': 'Bearer ' + accessToken
         }
       });
       request.done(function( response ) {
