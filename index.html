@@ -34,7 +34,7 @@
       tabs.find("div").remove();
       _.each(yearPlaylists, function (playlist) {
 
-        let albums = {};
+        var albums = {};
 
         let request = $.ajax({
           method: "GET",
@@ -54,6 +54,7 @@
                 "name": _.get(item, "track.album.name"),
                 "img": _.get(item, "track.album.images.1.url")
               };
+              console.log("id", id);
               albums[id] = album;
             }
           });
@@ -85,13 +86,8 @@
 
         tabDiv.append(iframe);
 
-        console.log("albums", albums);
-        console.log(typeof albums);
-        console.log("keysIn", _.keysIn(albums));
+        _.each(albums, function (album) {
 
-        _.each(_.keys(albums), function (key) {
-
-          let album = albums[key];
           console.log("album", album);
 
           let albumDiv = $("<div>");
