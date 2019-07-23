@@ -60,6 +60,8 @@
 
         });
 
+        console.log("albums");
+
         let headerLi = $("<li>");
         let link = $("<a>");
         link.attr("href", "#" + playlist.code);
@@ -94,7 +96,7 @@
           let albumArtistLabel = $("<p>");
           albumArtistLabel.text = album.artist;
 
-          let albumImage = $("<div>");
+          let albumImage = $("<img>");
           albumImage.attr("src", album.img);
 
           let albumNameLabel = $("<p>");
