@@ -97,7 +97,7 @@ $.changeYear = function (year) {
           albumDiv.append(imageContainer);
 
           let albumLabel = $("<p>");
-          albumLabel.attr("style", "width:300px;overflow:hidden;");
+          albumLabel.attr("style", "width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;");
           albumLabel.text(album.artist + ": " + album.name);
           albumDiv.append(albumLabel);
 
