@@ -85,9 +85,9 @@
 
         tabDiv.append(iframe);
 
-        console.log("albums", albums);
+        console.log("albums length", albums.length);
 
-        _.forIn(albums, function(album, id){
+        _.each(albums, function (album, id) {
 
           console.log("album", album);
 
