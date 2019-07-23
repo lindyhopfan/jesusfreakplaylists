@@ -1,4 +1,11 @@
-window.changeYear = function (year) {
+$.urlParam = function (name) {
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+  .exec(window.location.search);
+
+  return (results !== null) ? results[1] || 0 : false;
+};
+
+$.changeYear = function (year) {
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
   });
@@ -96,10 +103,3 @@ window.changeYear = function (year) {
     });
   }
 };
-
-$.urlParam = function (name) {
-  var results = new RegExp('[\?&]' + name + '=([^&#]*)')
-  .exec(window.location.search);
-
-  return (results !== null) ? results[1] || 0 : false;
-}

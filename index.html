@@ -27,7 +27,7 @@
       $(function () {
         $("#tabs").tabs();
         let handle = $("#custom-handle");
-        window.changeYear(1984);
+        $.changeYear(1984);
         $("#slider-vertical").slider({
           orientation: "vertical",
           range: "false",
@@ -39,7 +39,7 @@
             handle.text($(this).slider("value"));
           },
           change: function (event, ui) {
-            window.changeYear(ui.value);
+            $.changeYear(ui.value);
           },
           slide: function (event, ui) {
             $("#year").val(ui.value);
@@ -69,7 +69,7 @@
 
     <div id="portfolioColumn" class="col s11 m11 l11">
 
-      <div id="portfolioTitle" class="col s6 m6 l6">
+      <div id="portfolioTitle">
         <p id="portfolioText">Jesus Freak Playlists</p>
         <p>
           <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
@@ -78,11 +78,7 @@
         </p>
       </div>
 
-      <div id="authSpacer" class="col s3 m3 l3">
-
-      </div>
-
-      <div id="authLink" class="col s2 m2 l2">
+      <div id="authLink">
         <p><a href="https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com">Login to Spotify to see album art</a></p>
       </div>
 
