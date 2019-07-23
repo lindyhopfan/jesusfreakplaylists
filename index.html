@@ -87,8 +87,6 @@
 
         tabDiv.append(iframe);
 
-        tabs.append(tabDiv);
-
         _.each(albums, function(album){
           let albumDiv = $("<div>");
           albumDiv.attr("id", album.id);
@@ -106,9 +104,11 @@
           albumDiv.append(albumImage);
           albumDiv.append(albumNameLabel);
 
-          tabs.append(albumDiv);
+          tabDiv.append(albumDiv);
 
         });
+
+        tabs.append(tabDiv);
       });
       tabs.tabs("refresh");
       tabs.tabs("option", "active", 0);
