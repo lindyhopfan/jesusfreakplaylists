@@ -71,22 +71,37 @@
 
     <div id="portfolioColumn" class="col s11 m11 l11">
 
-      <div id="portfolioTitle">
-        <p id="portfolioText">Jesus Freak Playlists</p>
-        <p>
-          <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
+      <div class="row">
 
-          <span style="white-space:nowrap;">
-            <button onclick="$.priorYear();">Prior</button>
-            <input type="text" id="year" readonly style="border:0; color:#f6931f; font-weight:bold; font-size: 2rem; display:inline; width: 65px; margin:0px 5px 0px 5px;">
-            <button onclick="$.nextYear();">Next</button>
-          </span>
+        <div id="portfolioTitle" class="col s6 m6 l6">
+          <p id="portfolioText">Jesus Freak Playlists</p>
+          <p id="portfolioSubtitle">
+            <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
 
-        </p>
-      </div>
+            <span style="white-space:nowrap;">
+              <button onclick="$.priorYear();">Prior</button>
+                <input type="text" id="year" readonly style="border:0; color:#f6931f; font-weight:bold; font-size: 2rem; display:inline; width: 65px; margin:0px 5px 0px 5px;">
+              <button onclick="$.nextYear();">Next</button>
+            </span>
 
-      <div id="authLink">
-        <p><a href="https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com">Login to Spotify to see album art</a></p>
+          </p>
+          <p id="authLink">
+            <a href="https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com">Login to Spotify to see album art</a>
+          </p>
+
+        </div>
+
+        <div id="otherPlaylists" class="col s5 m5 l5">
+          <p>
+            Test 1
+          </p>
+          <p>
+            Test 2
+          </p>
+          <p>
+            Test 3
+          </p>
+        </div>
       </div>
 
       <div class="row" id="portfolioItemContainer">
