@@ -86,19 +86,48 @@ $.changeYear = function (year) {
         _.each(albums, function (album) {
 
           let albumDiv = $("<div>");
-          albumDiv.attr("id", album.id);
           albumDiv.attr("style", "display:inline-block;");
 
+          let albumModal = $("<div>");
+          albumModal.attr("id", album.id);
+          albumModal.attr("class", "modal");
+
+          let modalIframe = $("<iframe>");
+          modalIframe.attr("src", "https://open.spotify.com/embed/album/" + album.id);
+          modalIframe.attr("width", "300");
+          modalIframe.attr("height", "300");
+          modalIframe.attr("iframeborder", "0");
+          modalIframe.attr("allowtransparency", true);
+          modalIframe.attr("allow", "encrypted-media");
+
+          let modalClose = $("<a>");
+          modalClose.attr("href", "#");
+          modalClose.attr("rel", "model:close");
+          modalClose.text("Close");
+
+          albumModal.append(modalIframe);
+          albumModal.append(modalClose);
+          albumDiv.append(albumModal);
+
           let imageContainer = $("<p>");
+
+          let imageLink = $("<a>");
+          imageLink.attr("href", "#" + album.id);
+          imageLink.attr("rel", "model:open");
+
           let albumImage = $("<img>");
           albumImage.attr("src", album.img);
-          imageContainer.append(albumImage);
+
+          imageLink.append(albumImage);
+
+          imageContainer.append(imageLink);
 
           albumDiv.append(imageContainer);
 
           let albumLabel = $("<p>");
           albumLabel.attr("style", "width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;");
           albumLabel.text(album.artist + ": " + album.name);
+
           albumDiv.append(albumLabel);
 
           albumContainerDiv.append(albumDiv);
