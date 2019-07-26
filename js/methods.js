@@ -26,9 +26,11 @@ $.nextYear = function() {
 };
 
 $.changeYear = function (year) {
+  console.log("changeYear", year);
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
   });
+  console.log(yearPlaylists);
 
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
