@@ -100,13 +100,7 @@ $.changeYear = function (year) {
           modalIframe.attr("allowtransparency", true);
           modalIframe.attr("allow", "encrypted-media");
 
-          let modalClose = $("<a>");
-          modalClose.attr("href", "#");
-          modalClose.attr("rel", "modal:close");
-          modalClose.text("Close");
-
           albumModal.append(modalIframe);
-          albumModal.append(modalClose);
           albumDiv.append(albumModal);
 
           let imageContainer = $("<p>");
