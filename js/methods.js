@@ -12,6 +12,7 @@ $.priorYear = function() {
     $("#year").val(year);
   }
   $("#custom-handle").text(year);
+  $("#slider-vertical").slider('value', year);
   $.changeYear(year);
 };
 
@@ -22,6 +23,7 @@ $.nextYear = function() {
     $("#year").val(year);
   }
   $("#custom-handle").text(year);
+  $("#slider-vertical").slider('value', year);
   $.changeYear(year);
 };
 
