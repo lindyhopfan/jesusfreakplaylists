@@ -9,22 +9,16 @@ $.priorYear = function() {
   let year = $("#year").val();
   if(year != "1949"){
     year--;
-    $("#year").val(year);
   }
-  $("#custom-handle").text(year);
   $("#slider-vertical").slider('value', year);
-  $.changeYear(year);
 };
 
 $.nextYear = function() {
   let year = $("#year").val();
   if(year != "2019"){
     year++;
-    $("#year").val(year);
   }
-  $("#custom-handle").text(year);
   $("#slider-vertical").slider('value', year);
-  $.changeYear(year);
 };
 
 $.changeYear = function (year) {
