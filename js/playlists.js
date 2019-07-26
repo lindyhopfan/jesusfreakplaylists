@@ -2288,5 +2288,145 @@ var playlists = {
     "code": "1NY2yEqPD46R3xJTFX6OSd",
     "year": "2019",
     "genre": "Christmas"
+  },
+  "6kAaD79Hh86iHtu9Nb1WMN": {
+    "code": "6kAaD79Hh86iHtu9Nb1WMN",
+    "year": "christianPlaylists",
+    "genre": "Forgotten History of Christian Rock Vol 1"
+  },
+  "3emKSl54rBIYsQqxuqe2GR": {
+    "code": "3emKSl54rBIYsQqxuqe2GR",
+    "year": "christianPlaylists",
+    "genre": "Forgotten History of Christian Rock Vol 2"
+  },
+  "5buLl7sOGHhe7fSxWZHTdN": {
+    "code": "5buLl7sOGHhe7fSxWZHTdN",
+    "year": "christianPlaylists",
+    "genre": "Forgotten History of Christian Rock Vol 3"
+  },
+  "0JeLcU7ItcCe7VnTKJrR9D": {
+    "code": "0JeLcU7ItcCe7VnTKJrR9D",
+    "year": "christianPlaylists",
+    "genre": "Forgotten History of Christian Rock Vol 4"
+  },
+  "1IbxMwm7p9I3KQdiKtuSg4": {
+    "code": "1IbxMwm7p9I3KQdiKtuSg4",
+    "year": "christianPlaylists",
+    "genre": "Forgotten History of Christian Rock Vol 5"
+  },
+  "3apKjHEMvyoMCWnPKOo7Rm": {
+    "code": "3apKjHEMvyoMCWnPKOo7Rm",
+    "year": "christianPlaylists",
+    "genre": "Hymns Vol 1: Living Hymns"
+  },
+  "5dfmzpsAme8fBOUL7HEk2W": {
+    "code": "5dfmzpsAme8fBOUL7HEk2W",
+    "year": "christianPlaylists",
+    "genre": "Hymns Vol 2: Great Hymns of the Faith"
+  },
+  "0L5m4357HFIF6I4Jkqy8Jm": {
+    "code": "0L5m4357HFIF6I4Jkqy8Jm",
+    "year": "christianPlaylists",
+    "genre": "Songs and Creations"
+  },
+  "3Fwq9nwvShEK9awUt7RKrI": {
+    "code": "3Fwq9nwvShEK9awUt7RKrI",
+    "year": "christianPlaylists",
+    "genre": "Hymnal"
+  },
+  "5CWgRfh1TYU8b0dpDD5bj2": {
+    "code": "5CWgRfh1TYU8b0dpDD5bj2",
+    "year": "christianPlaylists",
+    "genre": "Hipster Gospel"
+  },
+  "6rOmgRsxhb2pc0tvyRTcE5": {
+    "code": "6rOmgRsxhb2pc0tvyRTcE5",
+    "year": "christianPlaylists",
+    "genre": "Swing Gospel"
+  },
+  "5xJIKGELKeIfm6iV7Rn7TO": {
+    "code": "5xJIKGELKeIfm6iV7Rn7TO",
+    "year": "christianPlaylists",
+    "genre": "Rockabilly Gospel"
+  },
+  "5vFIIw1yT0WlKI4vvAfpCg": {
+    "code": "5vFIIw1yT0WlKI4vvAfpCg",
+    "year": "christianPlaylists",
+    "genre": "Techno Gospel"
+  },
+  "6GdiElrhEodbycx2qUgxRb": {
+    "code": "6GdiElrhEodbycx2qUgxRb",
+    "year": "christianPlaylists",
+    "genre": "Traditional Black Gospel"
+  },
+  "2iUwNYPyMNNIpX2ZxGXCTG": {
+    "code": "2iUwNYPyMNNIpX2ZxGXCTG",
+    "year": "christianPlaylists",
+    "genre": "Irish Gospel"
+  },
+  "738VhstBXmP3hEr3DIHQrk": {
+    "code": "738VhstBXmP3hEr3DIHQrk",
+    "year": "christianPlaylists",
+    "genre": "Jamaican Gospel"
+  },
+  "5B1LgVwEfVLYwQhLqoUmwZ": {
+    "code": "5B1LgVwEfVLYwQhLqoUmwZ",
+    "year": "christianPlaylists",
+    "genre": "Hymns For Christmas"
+  },
+  "3Mg5dSok09Crpvyn6jcfMP": {
+    "code": "3Mg5dSok09Crpvyn6jcfMP",
+    "year": "swingPlaylists",
+    "genre": "The Dancing Habit"
+  },
+  "3oHajqFcGyOZnN9QGosUXh": {
+    "code": "3oHajqFcGyOZnN9QGosUXh",
+    "year": "swingPlaylists",
+    "genre": "Halloween Swing"
+  },
+  "3vxotOnOGDlZXyzJPLFnm2": {
+    "code": "3vxotOnOGDlZXyzJPLFnm2",
+    "year": "otherPlaylists",
+    "genre": "Hipster International"
+  },
+  "4PvRqEu0fcA3nhEgesbAg5": {
+    "code": "4PvRqEu0fcA3nhEgesbAg5",
+    "year": "otherPlaylists",
+    "genre": "The Hipster Housewife"
+  },
+  "3dwjG5KzlvhQKv8Fp03xL9": {
+    "code": "3dwjG5KzlvhQKv8Fp03xL9",
+    "year": "otherPlaylists",
+    "genre": "A Hipster's Guide To Sleep"
+  },
+  "48091ieG81bG7mwg4gr985": {
+    "code": "48091ieG81bG7mwg4gr985",
+    "year": "otherPlaylists",
+    "genre": "Old Time Religion"
+  },
+  "6CJkyImIaN0cEUY0Z6a3Eh": {
+    "code": "6CJkyImIaN0cEUY0Z6a3Eh",
+    "year": "otherPlaylists",
+    "genre": "Best Emo Songs of All Time"
+  },
+  "16s9dae8iRc5Ls01VYQEl8": {
+    "code": "16s9dae8iRc5Ls01VYQEl8",
+    "year": "otherPlaylists",
+    "genre": "Ye Olde Emo"
+  },
+  "16qpFldOvBtG35YWNsJMGa": {
+    "code": "16qpFldOvBtG35YWNsJMGa",
+    "year": "otherPlaylists",
+    "genre": "700+ Emo and Pop Punk Bands"
+  },
+  "1gKxwjTsqpRwR1VMxwwsqe": {
+    "code": "1gKxwjTsqpRwR1VMxwwsqe",
+    "year": "otherPlaylists",
+    "genre": "SKA: First Wave and Rocksteady"
+  },
+  "4qbmqyYnmImylRe4mllj02": {
+    "code": "4qbmqyYnmImylRe4mllj02",
+    "year": "otherPlaylists",
+    "genre": "SKA: Second Wave and Two Tone"
   }
 };
