@@ -95,6 +95,7 @@ $.changeYear = function (year) {
 
           let modalAlbumImage = $("<img>");
           modalAlbumImage.attr("src", album.img);
+          modalAlbumImage.attr("style", "display:inline-block;");
 
           let modalIframe = $("<iframe>");
           modalIframe.attr("src", "https://open.spotify.com/embed/album/" + album.id);
@@ -103,6 +104,7 @@ $.changeYear = function (year) {
           modalIframe.attr("iframeborder", "0");
           modalIframe.attr("allowtransparency", true);
           modalIframe.attr("allow", "encrypted-media");
+          modalIframe.attr("style", "display:inline-block;");
 
           albumModal.append(modalIframe);
           albumModal.append(modalAlbumImage);
