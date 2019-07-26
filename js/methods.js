@@ -5,6 +5,26 @@ $.urlParam = function (name, queryString) {
   return (results !== null) ? results[1] || 0 : false;
 };
 
+$.priorYear = function() {
+  let year = $("#year").val();
+  if(year != "1949"){
+    year--;
+    $("#year").val(year);
+  }
+  handle.text(year);
+  $.changeYear(year);
+};
+
+$.nextYear = function() {
+  let year = $("#year").val();
+  if(year != "2019"){
+    year++;
+    $("#year").val(year);
+  }
+  handle.text(year);
+  $.changeYear(year);
+};
+
 $.changeYear = function (year) {
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
