@@ -102,7 +102,7 @@ $.changeYear = function (year) {
 
           let modalClose = $("<a>");
           modalClose.attr("href", "#");
-          modalClose.attr("rel", "model:close");
+          modalClose.attr("rel", "modal:close");
           modalClose.text("Close");
 
           albumModal.append(modalIframe);
@@ -113,7 +113,7 @@ $.changeYear = function (year) {
 
           let imageLink = $("<a>");
           imageLink.attr("href", "#" + album.id);
-          imageLink.attr("rel", "model:open");
+          imageLink.attr("rel", "modal:open");
 
           let albumImage = $("<img>");
           albumImage.attr("src", album.img);
