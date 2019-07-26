@@ -29,6 +29,8 @@
       $(function () {
         $("#tabs").tabs();
         let handle = $("#custom-handle");
+        let year = Math.floor(Math.random()*(2019-1949+1)+1949);
+
         $.changeYear(1984);
         $("#slider-vertical").slider({
           orientation: "vertical",
@@ -36,7 +38,7 @@
           animate: "fast",
           min: 1949,
           max: 2019,
-          value: 1984,
+          value: year,
           create: function () {
             handle.text($(this).slider("value"));
           },
