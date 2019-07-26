@@ -51,7 +51,6 @@ $.changeYear = function (year) {
     tabDiv.attr("id", playlist.code);
 
     let tabP = $("<p>");
-    tabP.text(playlist.year + " " + playlist.genre);
     tabDiv.append(tabP);
 
     if(!accessToken){
