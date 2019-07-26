@@ -11,7 +11,7 @@ $.priorYear = function() {
     year--;
     $("#year").val(year);
   }
-  handle.text(year);
+  $("#custom-handle").text(year);
   $.changeYear(year);
 };
 
@@ -21,7 +21,7 @@ $.nextYear = function() {
     year++;
     $("#year").val(year);
   }
-  handle.text(year);
+  $("#custom-handle").text(year);
   $.changeYear(year);
 };
 
