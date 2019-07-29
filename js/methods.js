@@ -37,12 +37,17 @@ $.changeYear = function (year) {
 
   ul.empty();
   tabs.find("div").remove();
+  let index = 0;
+  let preferredIndex = 0;
   _.each(yearPlaylists, function (playlist) {
 
     let headerLi = $("<li>");
     let link = $("<a>");
     link.attr("href", "#" + playlist.code);
     link.text(playlist.genre);
+    if($.lastTab == playlist.genre){
+      preferredIndex = index;
+    }
     headerLi.html(link);
 
     ul.append(headerLi);
@@ -64,9 +69,10 @@ $.changeYear = function (year) {
     }
 
     tabs.append(tabDiv);
+    index++;
   });
   tabs.tabs("refresh");
-  tabs.tabs("option", "active", 0);
+  tabs.tabs("option", "active", preferredIndex);
 
   if(accessToken){
 

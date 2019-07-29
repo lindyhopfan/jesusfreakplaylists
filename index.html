@@ -29,7 +29,7 @@
       $(function () {
         $("#tabs").tabs({
           activate: function( event, ui ) {
-            console.log(ui);
+            $.lastTab = _.get(ui, "newTab.0.innerText");
           }
         });
         let handle = $("#custom-handle");
