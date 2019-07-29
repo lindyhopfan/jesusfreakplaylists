@@ -27,7 +27,11 @@
   <script>
     jQuery(document).ready(function ($) {
       $(function () {
-        $("#tabs").tabs();
+        $("#tabs").tabs({
+          activate: function( event, ui ) {
+            console.log(ui);
+          }
+        });
         let handle = $("#custom-handle");
         let year = Math.floor(Math.random()*(2019-1949+1)+1949);
 
