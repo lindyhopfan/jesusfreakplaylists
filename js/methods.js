@@ -154,7 +154,13 @@ $.changeYear = function (year) {
 
           albumDiv.append(albumLabel);
 
-          albumContainerDiv.append(albumDiv);
+          albumContainerDiv.append(albumDiv);$("#authLink").modal({
+            escapeClose: false,
+            clickClose: false,
+            showClose: false
+          });
+
+          $('.authLink').trigger('click');
 
         });
 
