@@ -55,21 +55,13 @@ $.changeYear = function (year) {
 
     if(!accessToken){
 
-      // let iframe = $("<iframe>");
-      // iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
-      // iframe.attr("width", "300");
-      // iframe.attr("height", "380");
-      // iframe.attr("iframeborder", "0");
-      // iframe.attr("allowtransparency", true);
-      // iframe.attr("allow", "encrypted-media");
-      //
-      // tabDiv.append(iframe);
+      $("#authLink").modal({
+        escapeClose: false,
+        clickClose: false,
+        showClose: false
+      });
 
-      let playlistAnchor = $("<a>");
-      playlistAnchor.attr("href", "https://open.spotify.com/playlist/" + playlist.code);
-      playlistAnchor.text("Open playlist in Spotify");
-
-      tabDiv.append(playlistAnchor);
+      $('.authLink').trigger('click');
     }
 
     tabs.append(tabDiv);
@@ -168,15 +160,15 @@ $.changeYear = function (year) {
 
         tabDiv.append(albumContainerDiv);
 
-        // let iframe = $("<iframe>");
-        // iframe.attr("src", "https://open.spotify.com/embed/user/josh.sarean/playlist/" + playlist.code);
-        // iframe.attr("width", "300");
-        // iframe.attr("height", "380");
-        // iframe.attr("iframeborder", "0");
-        // iframe.attr("allowtransparency", true);
-        // iframe.attr("allow", "encrypted-media");
-        //
-        // tabDiv.append(iframe);
+      }).error(function(error){
+
+        $("#authLink").modal({
+          escapeClose: false,
+          clickClose: false,
+          showClose: false
+        });
+
+        $('.authLink').trigger('click');
 
       });
     });
