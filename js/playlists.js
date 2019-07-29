@@ -2314,6 +2314,116 @@ var playlists = {
     "year": "christianRockHistory",
     "genre": "Forgotten History of Christian Rock Vol 5"
   },
+  "1FosAaaKAiHWrNgt5kLc1B": {
+    "code": "1FosAaaKAiHWrNgt5kLc1B",
+    "year": "christianRockHistory",
+    "genre": "Christian ROCK History 1: Pioneers (1956-1968)"
+  },
+  "1xLSsJ0kVikLDcQB218jq4": {
+    "code": "1xLSsJ0kVikLDcQB218jq4",
+    "year": "christianRockHistory",
+    "genre": "Christian ROCK History 2: Psychedelia (1968-74)"
+  },
+  "2c2TE1pHN0jKPMxox8FHU9": {
+    "code": "2c2TE1pHN0jKPMxox8FHU9",
+    "year": "christianRockHistory",
+    "genre": "Christian ROCK History 3: Jesus Music (1974-80)"
+  },
+  "7xnhljQFSn2eCbf4n5aC0D": {
+    "code": "7xnhljQFSn2eCbf4n5aC0D",
+    "year": "christianRockHistory",
+    "genre": "Christian ROCK History 4: Contemporary (1980-85)"
+  },
+  "2pDVn6hxc6l4OhGKBvauVL": {
+    "code": "2pDVn6hxc6l4OhGKBvauVL",
+    "year": "christianRockHistory",
+    "genre": "Christian ROCK History 5: Soft Rock (1986-92)"
+  },
+  "47dMcMrYgOFJG3xIajKv7a": {
+    "code": "47dMcMrYgOFJG3xIajKv7a",
+    "year": "christianRockHistory",
+    "genre": "Christian ROCK History 6: Pop Rock (1993-99)"
+  },
+  "5nX7vrSyzlNMXqmdephXmI": {
+    "code": "5nX7vrSyzlNMXqmdephXmI",
+    "year": "christianRockHistory",
+    "genre": "Christian ALTER History 1: New Wave (1981-92)"
+  },
+  "79Zwr8NwIP76Rsmp6fC04I": {
+    "code": "79Zwr8NwIP76Rsmp6fC04I",
+    "year": "christianRockHistory",
+    "genre": "Christian ALTER History 2: Grunge (1993-99)"
+  },
+  "6Q7XO4lDhT7OV0GR2csOtm": {
+    "code": "6Q7XO4lDhT7OV0GR2csOtm",
+    "year": "christianRockHistory",
+    "genre": "Christian ALTER History 3: Emotions (2000-04)"
+  },
+  "2QgKoLJbEWC5qoPL3fOYbu": {
+    "code": "2QgKoLJbEWC5qoPL3fOYbu",
+    "year": "christianRockHistory",
+    "genre": "Christian PUNK History 1: Classic Period (1975-94)"
+  },
+  "5FfFSFgAgSWDFqZwAs7KSW": {
+    "code": "5FfFSFgAgSWDFqZwAs7KSW",
+    "year": "christianRockHistory",
+    "genre": "Christian PUNK History 2: Golden Years (1995-99)"
+  },
+  "4jUuVOh3a4OglUDJhr2DMd": {
+    "code": "4jUuVOh3a4OglUDJhr2DMd",
+    "year": "christianRockHistory",
+    "genre": "Christian PUNK History 3: Changing Scene (2000-04)"
+  },
+  "0NYlntAT2xkuTFS21LK3cH": {
+    "code": "0NYlntAT2xkuTFS21LK3cH",
+    "year": "christianRockHistory",
+    "genre": "Christian PUNK History 4: Mainstream Era (2005-10)"
+  },
+  "5hMw8TfgG80Un3EIvztRZT": {
+    "code": "5hMw8TfgG80Un3EIvztRZT",
+    "year": "christianRockHistory",
+    "genre": "Christian PUNK History 5: New Generation (2010s)"
+  },
+  "3oAyCeWdklcJUmrv7Z8CCD": {
+    "code": "3oAyCeWdklcJUmrv7Z8CCD",
+    "year": "christianRockHistory",
+    "genre": "Christian PUNK History 6: Ska, Swing, and Rockabilly"
+  },
+  "6fj4vhU7UpQruEmrr0fQwO": {
+    "code": "6fj4vhU7UpQruEmrr0fQwO",
+    "year": "christianRockHistory",
+    "genre": "Christian PUNK History 7: Punk & Ska Latino"
+  },
+  "1NpwgBqJjfdQcDMjFoFHfO": {
+    "code": "1NpwgBqJjfdQcDMjFoFHfO",
+    "year": "christianRockHistory",
+    "genre": "Christian METAL History 1: Classic (1978-87)"
+  },
+  "2Zu0e1Nm3iKCQKVRTUpLMk": {
+    "code": "2Zu0e1Nm3iKCQKVRTUpLMk",
+    "year": "christianRockHistory",
+    "genre": "Christian METAL History 2: Mainstream (1988-92)"
+  },
+  "6U98Kw4Y5L61Owhh4dFOtt": {
+    "code": "6U98Kw4Y5L61Owhh4dFOtt",
+    "year": "christianRockHistory",
+    "genre": "Christian METAL History 3: Underground (1993-00)"
+  },
+  "1Uvb0JEMIeOGgFmm9KiMCW": {
+    "code": "1Uvb0JEMIeOGgFmm9KiMCW",
+    "year": "christianRockHistory",
+    "genre": "Christian METAL History 4: Revival (2001-10)"
+  },
+  "0fbVWElWUZ3GKTww1SePGV": {
+    "code": "0fbVWElWUZ3GKTww1SePGV",
+    "year": "christianRockHistory",
+    "genre": "Christian CORE History 1: Hardcore (1994-02)"
+  },
+  "2YeKnuhXLO9nwD0DetJgaT": {
+    "code": "2YeKnuhXLO9nwD0DetJgaT",
+    "year": "christianRockHistory",
+    "genre": "Christian ELECTRO History 1: Eurodance (90s)"
+  },
   "5CWgRfh1TYU8b0dpDD5bj2": {
     "code": "5CWgRfh1TYU8b0dpDD5bj2",
     "year": "gospelGenres",
@@ -2423,6 +2533,51 @@ var playlists = {
     "code": "4qbmqyYnmImylRe4mllj02",
     "year": "skaPlaylists",
     "genre": "SKA: Second Wave and Two Tone"
+  },
+  "7hKkVUavwYAOaihEfDhDMo": {
+    "code": "7hKkVUavwYAOaihEfDhDMo",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate Christian ALTER"
+  },
+  "6eq0pbzlyAebbLXg5ouZX7": {
+    "code": "6eq0pbzlyAebbLXg5ouZX7",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate Christian ROCK"
+  },
+  "4KkcOE1sH8WBvHse1VAV8o": {
+    "code": "4KkcOE1sH8WBvHse1VAV8o",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate Christian PUNK & SKA"
+  },
+  "6vl2jHrWUMUXQEXNWBVDCN": {
+    "code": "6vl2jHrWUMUXQEXNWBVDCN",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate Christian METAL"
+  },
+  "5EpHIqSgYcYBWGsk6sK3fT": {
+    "code": "5EpHIqSgYcYBWGsk6sK3fT",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate Christian CORE"
+  },
+  "7oRwCla2RvKMnjABIZeM7l": {
+    "code": "7oRwCla2RvKMnjABIZeM7l",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate CLASSIC PRAISE"
+  },
+  "1cxvx0K2O3FwwdM1ZnVkFf": {
+    "code": "1cxvx0K2O3FwwdM1ZnVkFf",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate MODERN WORSHIP"
+  },
+  "5zD4gZo8PAm1F5Eb0JHHvP": {
+    "code": "5zD4gZo8PAm1F5Eb0JHHvP",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate POWER PRAISE"
+  },
+  "0MkWMg2neAOup7rlOirC7e": {
+    "code": "0MkWMg2neAOup7rlOirC7e",
+    "year": "ultimatePlaylists",
+    "genre": "Ultimate HIPSTER & INDIE"
   },
   "48091ieG81bG7mwg4gr985": {
     "code": "48091ieG81bG7mwg4gr985",
