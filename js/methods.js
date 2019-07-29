@@ -99,6 +99,7 @@ $.changeYear = function (year) {
 
         let playlistAnchor = $("<a>");
         playlistAnchor.attr("href", "https://open.spotify.com/playlist/" + playlist.code);
+        playlistAnchor.attr("style", "color:#039be5;")
         playlistAnchor.text("Open playlist in Spotify");
 
         tabDiv.append(playlistAnchor);
