@@ -166,7 +166,7 @@ $.changeYear = function (year) {
 
         tabDiv.append(albumContainerDiv);
 
-      }).error(function(error){
+      }).fail(function(error){
 
         $("#authLink").modal({
           escapeClose: false,
