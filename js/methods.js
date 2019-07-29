@@ -55,13 +55,12 @@ $.changeYear = function (year) {
 
     if(!accessToken){
 
-      $("#authLink").modal({
-        escapeClose: false,
-        clickClose: false,
-        showClose: false
-      });
+      let playlistAnchor = $("<a>");
+      playlistAnchor.attr("href", "https://open.spotify.com/playlist/" + playlist.code);
+      playlistAnchor.attr("style", "color:#039be5;");
+      playlistAnchor.text("Open playlist in Spotify");
 
-      $('.authLink').trigger('click');
+      tabDiv.append(playlistAnchor);
     }
 
     tabs.append(tabDiv);
@@ -154,28 +153,11 @@ $.changeYear = function (year) {
 
           albumDiv.append(albumLabel);
 
-          albumContainerDiv.append(albumDiv);$("#authLink").modal({
-            escapeClose: false,
-            clickClose: false,
-            showClose: false
-          });
-
-          $('.authLink').trigger('click');
+          albumContainerDiv.append(albumDiv);
 
         });
 
         tabDiv.append(albumContainerDiv);
-
-      })
-      .fail(function(error){
-
-        $("#authLink").modal({
-          escapeClose: false,
-          clickClose: false,
-          showClose: false
-        });
-
-        $('.authLink').trigger('click');
 
       });
     });
