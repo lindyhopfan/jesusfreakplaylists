@@ -166,17 +166,18 @@ $.changeYear = function (year) {
 
         tabDiv.append(albumContainerDiv);
 
-      }).fail(function(error){
-
-        $("#authLink").modal({
-          escapeClose: false,
-          clickClose: false,
-          showClose: false
-        });
-
-        $('.authLink').trigger('click');
-
       });
+      // .fail(function(error){
+      //
+      //   $("#authLink").modal({
+      //     escapeClose: false,
+      //     clickClose: false,
+      //     showClose: false
+      //   });
+      //
+      //   $('.authLink').trigger('click');
+      //
+      // });
     });
   }
 };
