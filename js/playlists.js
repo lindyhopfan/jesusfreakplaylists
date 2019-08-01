@@ -2429,15 +2429,10 @@ var playlists = {
     "year": "gospelGenres",
     "genre": "Hipster Gospel"
   },
-  "6rOmgRsxhb2pc0tvyRTcE5": {
-    "code": "6rOmgRsxhb2pc0tvyRTcE5",
+  "1EMFBDP0CNULNJu5Jzia35": {
+    "code": "1EMFBDP0CNULNJu5Jzia35",
     "year": "gospelGenres",
-    "genre": "Swing Gospel"
-  },
-  "5xJIKGELKeIfm6iV7Rn7TO": {
-    "code": "5xJIKGELKeIfm6iV7Rn7TO",
-    "year": "gospelGenres",
-    "genre": "Rockabilly Gospel"
+    "genre": "Swing-a-Billy Gospel"
   },
   "5vFIIw1yT0WlKI4vvAfpCg": {
     "code": "5vFIIw1yT0WlKI4vvAfpCg",
