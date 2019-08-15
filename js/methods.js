@@ -121,7 +121,6 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
   request.done(function( response ) {
 
     let next = response.next;
-    window.console.log(next);
 
     _.each(response.items, function (item) {
       let id = _.get(item, "track.album.id");
@@ -140,9 +139,9 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
     if(response.next){
 
+      window.console.log("yes next", response.next);
       let moreDiv = $("#more_" + playlistCode);
       if(!moreDiv.length){
-        window.console.log("no more for", playlistCode);
         moreDiv = $("<div>");
         moreDiv.attr("id", "more_" + playlistCode);
         moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
@@ -161,6 +160,7 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
     }
     else {
+      window.console.log("no next");
       let moreDiv = $("#more_" + playlistCode);
       if(!moreDiv.length){
         moreDiv.remove();
