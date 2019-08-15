@@ -139,10 +139,12 @@ $.addAlbumsToTab = function(albums, playlistCode) {
 
   _.each(albums, function (album) {
 
-    console.log("album", album);
-
     let albumDiv = $("<div>");
     albumDiv.attr("style", "display:inline-block;");
+    albumDiv.click(function() {
+      let iframe = $("#modal_" + album.id);
+      iframe.attr("src", iframe.attr("realSrc"));
+    });
 
     let albumModal = $("<div>");
     albumModal.attr("id", album.id);
@@ -150,7 +152,9 @@ $.addAlbumsToTab = function(albums, playlistCode) {
     albumModal.attr("style", "text-align:center;overflow:visible;padding-top:22px;max-width:660px;");
 
     let modalIframe = $("<iframe>");
-    modalIframe.attr("src", "https://open.spotify.com/embed/album/" + album.id);
+    modalIframe.attr("id", "#modal_" + album.id);
+    modalIframe.attr("src", "#");
+    modalIframe.attr("realSrc", "https://open.spotify.com/embed/album/" + album.id);
     modalIframe.attr("width", "300");
     modalIframe.attr("height", "300");
     modalIframe.attr("iframeborder", "0");
