@@ -144,7 +144,7 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
       if(!moreDiv.length){
         window.console.log("no more for", playlistCode);
         moreDiv = $("<div>");
-        moreDiv.attr("id", "#more_" + playlistCode);
+        moreDiv.attr("id", "more_" + playlistCode);
         moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
         moreDiv.text("load more results");
         tabDiv.append(moreDiv);
