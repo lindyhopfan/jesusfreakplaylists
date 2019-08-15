@@ -33,7 +33,7 @@ $.changeYear = function (year) {
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
 
-  let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
+  $.accessToken = $.urlParam('access_token', window.location.hash.substr(1));
 
   ul.empty();
   tabs.find("div").remove();
@@ -58,7 +58,7 @@ $.changeYear = function (year) {
     let tabP = $("<p>");
     tabDiv.append(tabP);
 
-    if(!accessToken){
+    if(!$.accessToken){
 
       let playlistAnchor = $("<a>");
       playlistAnchor.attr("href", "https://open.spotify.com/playlist/" + playlist.code);
@@ -74,99 +74,119 @@ $.changeYear = function (year) {
   tabs.tabs("refresh");
   tabs.tabs("option", "active", preferredIndex);
 
-  if(accessToken){
+  if($.accessToken){
 
     _.each(yearPlaylists, function(playlist){
-      var albums = {};
 
-      let request = $.ajax({
-        method: "GET",
-        url: 'https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks',
-        headers: {
-          'Authorization': 'Bearer ' + accessToken
-        }
-      });
-      request.done(function( response ) {
+      let tabDiv = $("#" + playlist.code);
 
-        _.each(response.items, function (item) {
-          let id = _.get(item, "track.album.id");
-          if(!_.includes(_.keys(albums), id)){
-            let album = {
-              "id": id,
-              "artist": _.get(item, "track.album.artists.0.name"),
-              "name": _.get(item, "track.album.name"),
-              "img": _.get(item, "track.album.images.1.url")
-            };
-            albums[id] = album;
-          }
-        });
+      let playlistAnchor = $("<a>");
+      playlistAnchor.attr("href", "https://open.spotify.com/playlist/" + playlist.code);
+      playlistAnchor.attr("style", "color:#039be5;");
+      playlistAnchor.text("Open playlist in Spotify");
 
-        let tabDiv = $("#" + playlist.code);
+      tabDiv.append(playlistAnchor);
 
-        let playlistAnchor = $("<a>");
-        playlistAnchor.attr("href", "https://open.spotify.com/playlist/" + playlist.code);
-        playlistAnchor.attr("style", "color:#039be5;")
-        playlistAnchor.text("Open playlist in Spotify");
+      $.fetchPlaylist(playlist);
 
-        tabDiv.append(playlistAnchor);
-
-        let albumContainerDiv = $("<div>");
-
-        _.each(albums, function (album) {
-
-          let albumDiv = $("<div>");
-          albumDiv.attr("style", "display:inline-block;");
-
-          let albumModal = $("<div>");
-          albumModal.attr("id", album.id);
-          albumModal.attr("class", "modal");
-          albumModal.attr("style", "text-align:center;overflow:visible;padding-top:22px;max-width:660px;");
-
-          let modalIframe = $("<iframe>");
-          modalIframe.attr("src", "https://open.spotify.com/embed/album/" + album.id);
-          modalIframe.attr("width", "300");
-          modalIframe.attr("height", "300");
-          modalIframe.attr("iframeborder", "0");
-          modalIframe.attr("allowtransparency", true);
-          modalIframe.attr("allow", "encrypted-media");
-          modalIframe.attr("style", "display:inline-block;");
-
-          let modalAlbumImage = $("<img>");
-          modalAlbumImage.attr("src", album.img);
-          modalAlbumImage.attr("style", "display:inline-block;");
-
-          albumModal.append(modalAlbumImage);
-          albumModal.append(modalIframe);
-          albumDiv.append(albumModal);
-
-          let imageContainer = $("<p>");
-
-          let imageLink = $("<a>");
-          imageLink.attr("href", "#" + album.id);
-          imageLink.attr("rel", "modal:open");
-
-          let albumImage = $("<img>");
-          albumImage.attr("src", album.img);
-
-          imageLink.append(albumImage);
-
-          imageContainer.append(imageLink);
-
-          albumDiv.append(imageContainer);
-
-          let albumLabel = $("<p>");
-          albumLabel.attr("style", "width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;");
-          albumLabel.text(album.artist + ": " + album.name);
-
-          albumDiv.append(albumLabel);
-
-          albumContainerDiv.append(albumDiv);
-
-        });
-
-        tabDiv.append(albumContainerDiv);
-
-      });
     });
   }
+};
+
+$.fetchPlaylist = function(playlist) {
+
+  var albums = {};
+
+  let request = $.ajax({
+    method: "GET",
+    url: 'https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks',
+    headers: {
+      'Authorization': 'Bearer ' + $.accessToken
+    }
+  });
+  request.done(function( response ) {
+
+    console.log(response);
+
+    _.each(response.items, function (item) {
+      let id = _.get(item, "track.album.id");
+      if(!_.includes(_.keys(albums), id)){
+        let album = {
+          "id": id,
+          "artist": _.get(item, "track.album.artists.0.name"),
+          "name": _.get(item, "track.album.name"),
+          "img": _.get(item, "track.album.images.1.url")
+        };
+        albums[id] = album;
+      }
+    });
+
+    let tabDiv = $("#" + playlist.code);
+    let albumContainerDiv = $("<div>");
+    albumContainerDiv.attr("id", "albums_" + playlist.code);
+
+    tabDiv.append(albumContainerDiv);
+
+    $.addAlbumsToTab(albums, playlist.code);
+
+  });
+
+};
+
+$.addAlbumsToTab = function(albums, playlistCode) {
+
+  let albumContainerDiv = $("#albums_" + playlistCode);
+
+  _.each(albums, function (album) {
+
+    let albumDiv = $("<div>");
+    albumDiv.attr("style", "display:inline-block;");
+
+    let albumModal = $("<div>");
+    albumModal.attr("id", album.id);
+    albumModal.attr("class", "modal");
+    albumModal.attr("style", "text-align:center;overflow:visible;padding-top:22px;max-width:660px;");
+
+    let modalIframe = $("<iframe>");
+    modalIframe.attr("src", "https://open.spotify.com/embed/album/" + album.id);
+    modalIframe.attr("width", "300");
+    modalIframe.attr("height", "300");
+    modalIframe.attr("iframeborder", "0");
+    modalIframe.attr("allowtransparency", true);
+    modalIframe.attr("allow", "encrypted-media");
+    modalIframe.attr("style", "display:inline-block;");
+
+    let modalAlbumImage = $("<img>");
+    modalAlbumImage.attr("src", album.img);
+    modalAlbumImage.attr("style", "display:inline-block;");
+
+    albumModal.append(modalAlbumImage);
+    albumModal.append(modalIframe);
+    albumDiv.append(albumModal);
+
+    let imageContainer = $("<p>");
+
+    let imageLink = $("<a>");
+    imageLink.attr("href", "#" + album.id);
+    imageLink.attr("rel", "modal:open");
+
+    let albumImage = $("<img>");
+    albumImage.attr("src", album.img);
+
+    imageLink.append(albumImage);
+
+    imageContainer.append(imageLink);
+
+    albumDiv.append(imageContainer);
+
+    let albumLabel = $("<p>");
+    albumLabel.attr("style", "width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;");
+    albumLabel.text(album.artist + ": " + album.name);
+
+    albumDiv.append(albumLabel);
+
+    albumContainerDiv.append(albumDiv);
+
+  });
+
 };
