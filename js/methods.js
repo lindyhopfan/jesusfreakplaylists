@@ -106,8 +106,6 @@ $.fetchPlaylist = function(playlist) {
   });
   request.done(function( response ) {
 
-    console.log(response);
-
     _.each(response.items, function (item) {
       let id = _.get(item, "track.album.id");
       if(!_.includes(_.keys(albums), id)){
@@ -129,6 +127,20 @@ $.fetchPlaylist = function(playlist) {
 
     $.addAlbumsToTab(albums, playlist.code);
 
+    if(response.next){
+
+      let moreDiv = $("<div>");
+      moreDiv.attr("width", "300");
+      moreDiv.attr("height", "20");
+      moreDiv.text("load more results");
+      moreDiv.click = function(){
+        alert("ready for more");
+      };
+
+      tabDiv.append(moreDiv);
+
+    }
+
   });
 
 };
@@ -146,8 +158,7 @@ $.addAlbumsToTab = function(albums, playlistCode) {
       let albumModal = $("#" + album.id);
 
       let modalIframe = $("<iframe>");
-      modalIframe.attr("src", "#");
-      modalIframe.attr("realSrc", "https://open.spotify.com/embed/album/" + album.id);
+      modalIframe.attr("src", "https://open.spotify.com/embed/album/" + album.id);
       modalIframe.attr("width", "300");
       modalIframe.attr("height", "300");
       modalIframe.attr("iframeborder", "0");
