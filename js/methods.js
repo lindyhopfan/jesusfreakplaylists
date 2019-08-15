@@ -141,14 +141,14 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
     if(response.next){
 
       let moreDiv = $("#more_" + playlistCode);
-      if(moreDiv){
-        moreDiv.remove();
+      if(!moreDiv){
+        moreDiv = $("<div>");
+        moreDiv.attr("id", "#more_" + playlistCode);
+        moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
+        moreDiv.text("load more results");
+        tabDiv.append(moreDiv);
       }
 
-      moreDiv = $("<div>");
-      moreDiv.attr("id", "#more_" + playlistCode);
-      moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
-      moreDiv.text("load more results");
       moreDiv.click(
         function(url, code, albumArray){
           return function(){
@@ -156,8 +156,6 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
           };
         }(next, playlistCode, albums)
       );
-
-      tabDiv.append(moreDiv);
 
     }
 
