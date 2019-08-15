@@ -95,11 +95,24 @@ $.changeYear = function (year) {
 
 $.fetchPlaylist = function(playlist) {
 
+  let tabDiv = $("#" + playlist.code);
+  let albumContainerDiv = $("<div>");
+  albumContainerDiv.attr("id", "albums_" + playlist.code);
+
+  tabDiv.append(albumContainerDiv);
+
+  $.fetchAdditionalTracks('https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks', playlist.code);
+
+};
+
+$.fetchAdditionalTracks = function (url, playlistCode) {
+
+  let tabDiv = $("#" + playlistCode);
   var albums = {};
 
   let request = $.ajax({
     method: "GET",
-    url: 'https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks',
+    url: url,
     headers: {
       'Authorization': 'Bearer ' + $.accessToken
     }
@@ -119,22 +132,21 @@ $.fetchPlaylist = function(playlist) {
       }
     });
 
-    let tabDiv = $("#" + playlist.code);
-    let albumContainerDiv = $("<div>");
-    albumContainerDiv.attr("id", "albums_" + playlist.code);
-
-    tabDiv.append(albumContainerDiv);
-
     $.addAlbumsToTab(albums, playlist.code);
 
     if(response.next){
 
-      let moreDiv = $("<div>");
-      moreDiv.attr("width", "300");
-      moreDiv.attr("height", "20");
+      let moreDiv = $("#more_" + playlist.code);
+      if(moreDiv){
+        moreDiv.remove();
+      }
+
+      moreDiv = $("<div>");
+      moreDiv.attr("id", "#more_" + playlist.code);
+      moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
       moreDiv.text("load more results");
       moreDiv.click = function(){
-        alert("ready for more");
+        $.fetchAdditionalTracks(response.next);
       };
 
       tabDiv.append(moreDiv);
