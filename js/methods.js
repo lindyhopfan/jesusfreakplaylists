@@ -139,7 +139,6 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
     if(response.next){
 
-      window.console.log("yes next", response.next);
       let moreDiv = $("#more_" + playlistCode);
       if(!moreDiv.length){
         moreDiv = $("<div>");
@@ -160,9 +159,8 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
     }
     else {
-      window.console.log("no next");
       let moreDiv = $("#more_" + playlistCode);
-      if(!moreDiv.length){
+      if(moreDiv.length){
         moreDiv.remove();
       }
     }
