@@ -139,6 +139,8 @@ $.addAlbumsToTab = function(albums, playlistCode) {
 
   _.each(albums, function (album) {
 
+    console.log("album", album);
+
     let albumDiv = $("<div>");
     albumDiv.attr("style", "display:inline-block;");
 
