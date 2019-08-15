@@ -101,14 +101,15 @@ $.fetchPlaylist = function(playlist) {
 
   tabDiv.append(albumContainerDiv);
 
-  $.fetchAdditionalTracks('https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks', playlist.code);
+  var albums = {};
+
+  $.fetchAdditionalTracks('https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks', playlist.code, albums);
 
 };
 
-$.fetchAdditionalTracks = function (url, playlistCode) {
+$.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
   let tabDiv = $("#" + playlistCode);
-  var albums = {};
 
   let request = $.ajax({
     method: "GET",
@@ -118,6 +119,9 @@ $.fetchAdditionalTracks = function (url, playlistCode) {
     }
   });
   request.done(function( response ) {
+
+    let next = response.next;
+    window.console.log(next);
 
     _.each(response.items, function (item) {
       let id = _.get(item, "track.album.id");
@@ -146,11 +150,11 @@ $.fetchAdditionalTracks = function (url, playlistCode) {
       moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
       moreDiv.text("load more results");
       moreDiv.click(
-        function(url, code){
+        function(url, code, albumArray){
           return function(){
-            $.fetchAdditionalTracks(url, code);
+            $.fetchAdditionalTracks(url, code, albumArray);
           };
-        }(response.next, playlistCode)
+        }(next, playlistCode, albums)
       );
 
       tabDiv.append(moreDiv);
