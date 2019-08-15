@@ -142,6 +142,7 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
       let moreDiv = $("#more_" + playlistCode);
       if(!moreDiv.length){
+        window.console.log("no more for", playlistCode);
         moreDiv = $("<div>");
         moreDiv.attr("id", "#more_" + playlistCode);
         moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
@@ -167,6 +168,7 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 $.addAlbumsToTab = function(albums, playlistCode) {
 
   let albumContainerDiv = $("#albums_" + playlistCode);
+  albumContainerDiv.empty();
 
   _.each(albums, function (album) {
 
