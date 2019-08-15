@@ -107,8 +107,6 @@ $.fetchPlaylist = function(playlist) {
 
 $.fetchAdditionalTracks = function (url, playlistCode) {
 
-  window.alert(url);
-
   let tabDiv = $("#" + playlistCode);
   var albums = {};
 
@@ -147,11 +145,13 @@ $.fetchAdditionalTracks = function (url, playlistCode) {
       moreDiv.attr("id", "#more_" + playlistCode);
       moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
       moreDiv.text("load more results");
-      moreDiv.click = function(url, code){
-        return function(){
-          $.fetchAdditionalTracks(url, code);
-        };
-      }(response.next, playlistCode);
+      moreDiv.click(
+        function(url, code){
+          return function(){
+            $.fetchAdditionalTracks(url, code);
+          };
+        }(response.next, playlistCode)
+      );
 
       tabDiv.append(moreDiv);
 
