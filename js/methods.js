@@ -160,6 +160,12 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
       );
 
     }
+    else {
+      let moreDiv = $("#more_" + playlistCode);
+      if(!moreDiv.length){
+        moreDiv.remove();
+      }
+    }
 
   });
 
