@@ -141,7 +141,7 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
     if(response.next){
 
       let moreDiv = $("#more_" + playlistCode);
-      if(!moreDiv){
+      if(!moreDiv.length){
         moreDiv = $("<div>");
         moreDiv.attr("id", "#more_" + playlistCode);
         moreDiv.attr("style", "width:300; height:20; font-size:XX-LARGE; cursor:pointer; color:#039be5;");
@@ -149,6 +149,7 @@ $.fetchAdditionalTracks = function (url, playlistCode, albums) {
         tabDiv.append(moreDiv);
       }
 
+      moreDiv.unbind();
       moreDiv.click(
         function(url, code, albumArray){
           return function(){
