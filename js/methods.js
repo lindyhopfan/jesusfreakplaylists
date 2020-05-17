@@ -92,7 +92,6 @@ $.changeYear = function (year) {
     });
   }
   if(!$.accessToken){
-    console.log("ready to show dialog");
     $.showDialog();
   }
 };
@@ -242,23 +241,31 @@ $.spotfiyLogin = function () {
   window.location.href = "https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com";
 };
 
-$.createDialog({
+$.setupDialog = function () {
+  $.createDialog({
 
-  // trigger element
-  attachAfter: '#trigger',
+    // trigger element
+    attachAfter: '#trigger',
 
-  // dialog title
-  title: 'Please login to Spotify before using this site.',
+    // dialog title
+    title: 'Please login to Spotify before using this site.',
 
-  // text for confirm button
-  accept: 'Yes',
+    // text for confirm button
+    accept: 'Yes',
 
-  // text for cancel button
-  refuse: 'Cancel',
+    // text for cancel button
+    refuse: 'Cancel',
 
-  // button styles
-  acceptStyle: 'red',
-  refuseStyle: 'gray',
+    // button styles
+    acceptStyle: 'red',
+    refuseStyle: 'gray',
 
-  acceptAction: $.spotfiyLogin
-});
+    acceptAction: $.spotfiyLogin
+  });
+};
+
+$.hideDialog = function() {
+  $('#confirm_dialog').remove();
+  $('#confirm_backdrop').remove();
+  $.setupDialog();
+};

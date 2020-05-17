@@ -39,6 +39,7 @@
         let handle = $("#custom-handle");
         let year = Math.floor(Math.random()*(2019-1949+1)+1949);
 
+        $.setupDialog();
         $.changeYear(year);
         $("#slider-vertical").slider({
           orientation: "vertical",
