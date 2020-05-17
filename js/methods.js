@@ -66,6 +66,8 @@ $.changeYear = function (year) {
       playlistAnchor.text("Open playlist in Spotify");
 
       tabDiv.append(playlistAnchor);
+
+      $.showDialog();
     }
 
     tabs.append(tabDiv);
@@ -233,3 +235,28 @@ $.addAlbumsToTab = function(albums, playlistCode) {
   });
 
 };
+
+$.spotfiyLogin = function () {
+  window.location.href = "https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com";
+};
+
+$.createDialog({
+
+  // trigger element
+  attachAfter: '#trigger',
+
+  // dialog title
+  title: 'Login to Spotify to enable jesusfreakplaylists.com?',
+
+  // text for confirm button
+  accept: 'Yes',
+
+  // text for cancel button
+  refuse: 'Cancel',
+
+  // button styles
+  acceptStyle: 'red',
+  refuseStyle: 'gray',
+
+  acceptAction: $.spotfiyLogin
+});
