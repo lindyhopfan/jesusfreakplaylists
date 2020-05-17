@@ -2439,6 +2439,66 @@ var playlists = {
     "year": "2019",
     "genre": "Christmas"
   },
+  "2w6Wd7Uw2kcJVNFMZtRrZK": {
+    "code": "2w6Wd7Uw2kcJVNFMZtRrZK",
+    "year": "2020",
+    "genre": "Rock Christian"
+  },
+  "6GkvOxKn4P5G8HI0UeAiZO": {
+    "code": "6GkvOxKn4P5G8HI0UeAiZO",
+    "year": "2020",
+    "genre": "Metal, Industrial, Rap-Core Christian"
+  },
+  "1jOo42WmNWo6xk5mM9RKXq": {
+    "code": "1jOo42WmNWo6xk5mM9RKXq",
+    "year": "2020",
+    "genre": "Punk, Ska, Emo, Hardcore Christian"
+  },
+  "5Mgt8DS1vZA7pTU8nGlIaF": {
+    "code": "5Mgt8DS1vZA7pTU8nGlIaF",
+    "year": "2020",
+    "genre": "Contemporary Christian"
+  },
+  "3UkLNXeGDVWMQJ5pMnmPSp": {
+    "code": "3UkLNXeGDVWMQJ5pMnmPSp",
+    "year": "2020",
+    "genre": "Worship"
+  },
+  "6Y1EayKnam2R1PqauoJv6z": {
+    "code": "6Y1EayKnam2R1PqauoJv6z",
+    "year": "2020",
+    "genre": "Southern Gospel"
+  },
+  "7pp3ZGFNf7wUDlTIhrj1II": {
+    "code": "7pp3ZGFNf7wUDlTIhrj1II",
+    "year": "2020",
+    "genre": "Urban Gospel"
+  },
+  "6oRqWdRNIkAqWwELwZCPTi": {
+    "code": "6oRqWdRNIkAqWwELwZCPTi",
+    "year": "2020",
+    "genre": "Soul & Reggae Gospel"
+  },
+  "0pTOz3157iLUxzxcQ2xjIj": {
+    "code": "0pTOz3157iLUxzxcQ2xjIj",
+    "year": "2020",
+    "genre": "Hip Hop Christian"
+  },
+  "68P1m4UnPCPMvZHmkM8y8r": {
+    "code": "68P1m4UnPCPMvZHmkM8y8r",
+    "year": "2020",
+    "genre": "World Christian"
+  },
+  "1JvI9mcSCJ8erzrLZulRz1": {
+    "code": "1JvI9mcSCJ8erzrLZulRz1",
+    "year": "2020",
+    "genre": "Hipster Christian"
+  },
+  "6F5VxemxtXELI1NjedhDWb": {
+    "code": "6F5VxemxtXELI1NjedhDWb",
+    "year": "2020",
+    "genre": "Christmas"
+  },
   "1FosAaaKAiHWrNgt5kLc1B": {
     "code": "1FosAaaKAiHWrNgt5kLc1B",
     "year": "christianRockPioneers",
