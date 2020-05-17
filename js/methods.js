@@ -66,8 +66,6 @@ $.changeYear = function (year) {
       playlistAnchor.text("Open playlist in Spotify");
 
       tabDiv.append(playlistAnchor);
-
-      $.openLightwindow();
     }
 
     tabs.append(tabDiv);
