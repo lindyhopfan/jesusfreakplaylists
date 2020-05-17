@@ -242,9 +242,6 @@ $.spotfiyLogin = function () {
 
 $.createDialog({
 
-  // trigger element
-  attachAfter: '#trigger',
-
   // dialog title
   title: 'Login to Spotify to enable jesusfreakplaylists.com?',
 
