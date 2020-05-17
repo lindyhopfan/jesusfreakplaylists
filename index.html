@@ -31,6 +31,16 @@
   <script>
     jQuery(document).ready(function ($) {
       $(function () {
+
+        $.openLightwindow = function () {
+          myLightWindow = new lightwindow();
+          myLightWindow.activateWindow({
+            href: 'https://www.jesusfreakplaylists/snippets/spotify_login.html',
+            title: 'Login to Spotify to see album art',
+            left: 300
+          });
+        };
+
         $("#tabs").tabs({
           activate: function( event, ui ) {
             $.lastTab = _.get(ui, "newTab.0.innerText");
