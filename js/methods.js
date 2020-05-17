@@ -66,6 +66,8 @@ $.changeYear = function (year) {
       playlistAnchor.text("Open playlist in Spotify");
 
       tabDiv.append(playlistAnchor);
+
+      $.openLightwindow();
     }
 
     tabs.append(tabDiv);
@@ -232,4 +234,12 @@ $.addAlbumsToTab = function(albums, playlistCode) {
 
   });
 
+};
+
+$.openLightwindow = function () {
+  myLightWindow.activateWindow({
+    href: 'https://www.jesusfreakplaylists/snippets/spotify_login.html',
+    title: 'Login to Spotify to see album art',
+    left: 300
+  });
 };
