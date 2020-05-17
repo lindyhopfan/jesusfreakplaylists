@@ -25,21 +25,12 @@
           src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <script src="js/lodash.js"></script>
-  <script type="text/javascript" src="javascript/prototype.js"></script>
-  <script type="text/javascript" src="javascript/scriptaculous.js?load=effects"></script>
-  <script type="text/javascript" src="javascript/lightwindow.js"></script>
+  <script type="text/javascript" src="js/prototype.js"></script>
+  <script type="text/javascript" src="js/scriptaculous.js?load=effects"></script>
+  <script type="text/javascript" src="js/lightwindow.js"></script>
   <script>
     jQuery(document).ready(function ($) {
       $(function () {
-
-        $.openLightwindow = function () {
-          myLightWindow = new lightwindow();
-          myLightWindow.activateWindow({
-            href: 'https://www.jesusfreakplaylists/snippets/spotify_login.html',
-            title: 'Login to Spotify to see album art',
-            left: 300
-          });
-        };
 
         $("#tabs").tabs({
           activate: function( event, ui ) {

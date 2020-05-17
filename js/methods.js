@@ -235,3 +235,12 @@ $.addAlbumsToTab = function(albums, playlistCode) {
   });
 
 };
+
+$.openLightwindow = function () {
+  myLightWindow = new lightwindow();
+  myLightWindow.activateWindow({
+    href: 'https://www.jesusfreakplaylists/snippets/spotify_login.html',
+    title: 'Login to Spotify to see album art',
+    left: 300
+  });
+};
