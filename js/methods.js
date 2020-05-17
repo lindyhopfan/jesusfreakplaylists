@@ -7,7 +7,7 @@ $.urlParam = function (name, queryString) {
 
 $.priorYear = function() {
   let year = $("#year").val();
-  if(year != "1949"){
+  if(year != $.minYear){
     year--;
     $("#year").val(year);
   }
@@ -17,7 +17,7 @@ $.priorYear = function() {
 
 $.nextYear = function() {
   let year = $("#year").val();
-  if(year != "2019"){
+  if(year != $.maxYear){
     year++;
     $("#year").val(year);
   }
