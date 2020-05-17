@@ -92,6 +92,7 @@ $.changeYear = function (year) {
     });
   }
   if(!$.accessToken){
+    console.log("ready to show dialog");
     $.showDialog();
   }
 };
