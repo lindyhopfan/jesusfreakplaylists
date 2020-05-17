@@ -66,8 +66,6 @@ $.changeYear = function (year) {
       playlistAnchor.text("Open playlist in Spotify");
 
       tabDiv.append(playlistAnchor);
-
-      $.showDialog();
     }
 
     tabs.append(tabDiv);
@@ -92,6 +90,9 @@ $.changeYear = function (year) {
       $.fetchPlaylist(playlist);
 
     });
+  }
+  if(!$.accessToken){
+    $.showDialog();
   }
 };
 
@@ -246,7 +247,7 @@ $.createDialog({
   attachAfter: '#trigger',
 
   // dialog title
-  title: 'Login to Spotify to enable jesusfreakplaylists.com?',
+  title: 'Please login to Spotify before using this site.',
 
   // text for confirm button
   accept: 'Yes',
