@@ -33,7 +33,7 @@ $.changeYear = function (year) {
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
 
-  $.accessToken = $.urlParam('access_token', window.location.hash.substr(1));
+  $.accessToken = Cookies.get('accessToken');
 
   ul.empty();
   tabs.find("div").remove();
@@ -73,6 +73,7 @@ $.changeYear = function (year) {
   });
   tabs.tabs("refresh");
   tabs.tabs("option", "active", preferredIndex);
+  window.history.pushState(null, null, '/#year=' + year + '&index=' + preferredIndex);
 
   if($.accessToken){
 
