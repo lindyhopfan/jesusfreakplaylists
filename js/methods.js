@@ -28,7 +28,7 @@ $.nextYear = function() {
 $.changeYear = function (year) {
   let lastTab = $.lastTab;
   if(!lastTab){
-    lastTab = 'rock';
+    lastTab = 'RockChristian';
   }
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
   let connectionOk = $.testConnection();

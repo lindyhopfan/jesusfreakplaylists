@@ -40,7 +40,9 @@
         let handle = $("#custom-handle");
         $.minYear = 1949;
         $.maxYear = 2020;
-        let year = Math.floor(Math.random()*($.maxYear-$.minYear+1)+$.minYear);
+        $.minYearShowcase = 1980;
+        $.maxYearShowcase = 2019;
+        let year = Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
 
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
         if(accessToken) {
