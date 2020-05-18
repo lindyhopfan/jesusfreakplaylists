@@ -2499,6 +2499,11 @@ var playlists = {
     "year": "2020",
     "genre": "Christmas"
   },
+  "5lhTXODFdaRj8j3EBVF3Im": {
+    "code": "5lhTXODFdaRj8j3EBVF3Im",
+    "year": "featured",
+    "genre": "Featured Christian Music"
+  },
   "1FosAaaKAiHWrNgt5kLc1B": {
     "code": "1FosAaaKAiHWrNgt5kLc1B",
     "year": "christianRockPioneers",
