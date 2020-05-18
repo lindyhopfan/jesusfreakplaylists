@@ -29,10 +29,7 @@ $.changeYear = function (year) {
   let connectionOk = $.testConnection();
   if(!connectionOk) {
     console.log("bad connection");
-    return false;
-  }
-  else {
-    console.log("good connection");
+    $.showDialog();
   }
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
@@ -127,7 +124,6 @@ $.testConnection = function () {
   request.done(function( response ) {
     console.log("response", response);
     if(response.error) {
-      $.showDialog();
       return false;
     }
     else {
