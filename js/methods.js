@@ -32,7 +32,10 @@ $.changeYear = async function (year) {
   }
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
   console.log("ready to test");
-  await $.testConnection();
+  let connectionOk = await $.testConnection();
+  if(!connectionOk) {
+    $.showDialog();
+  }
 
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
@@ -64,7 +67,7 @@ $.changeYear = async function (year) {
     let tabP = $("<p>");
     tabDiv.append(tabP);
 
-    if(!$.accessToken){
+    if(!connectionOk){
 
       let playlistAnchor = $("<a>");
       playlistAnchor.attr("href", "https://open.spotify.com/playlist/" + playlist.code);
@@ -80,7 +83,7 @@ $.changeYear = async function (year) {
   tabs.tabs("refresh");
   tabs.tabs("option", "active", preferredIndex);
 
-  if($.accessToken){
+  if(connectionOk){
 
     _.each(yearPlaylists, function(playlist){
 
@@ -115,7 +118,7 @@ $.fetchPlaylist = function(playlist) {
 
 $.testConnection = function () {
 
-  return new Promise(resolve => {
+  return new Promise(function(resolve) {
     $.accessToken = Cookies.get('accessToken');
     console.log("accessToken from Cookie", $.accessToken);
     let request = $.ajax({
@@ -128,11 +131,13 @@ $.testConnection = function () {
     request.done(function( response ) {
       if(response.error) {
         console.log("response error", response.error);
-        $.showDialog();
+        resolve(false);
+      }
+      else {
+        resolve(true);
       }
     });
   });
-
 };
 
 $.fetchAdditionalTracks = function (url, playlistCode, albums) {
