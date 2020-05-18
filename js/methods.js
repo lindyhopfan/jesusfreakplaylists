@@ -30,11 +30,8 @@ $.nextYear = function() {
 $.changeYear = async function (year) {
   $.year = year;
   $("#year").val($.year);
-  let lastTab = $.lastTab;
-  if(!lastTab){
-    lastTab = 'RockChristian';
-  }
-  window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
+
+  window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.genre );
   let connectionOk = await $.testConnection();
   if(!connectionOk) {
     $.showDialog();
@@ -57,7 +54,7 @@ $.changeYear = async function (year) {
     let link = $("<a>");
     link.attr("href", "#" + playlist.code);
     link.text(playlist.genre);
-    if($.lastTab == playlist.genre){
+    if($.genre == playlist.genre){
       preferredIndex = index;
     }
     headerLi.html(link);

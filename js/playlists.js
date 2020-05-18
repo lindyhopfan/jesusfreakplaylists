@@ -702,7 +702,7 @@ var playlists = {
   "0bEjiVzC90GIjGBuUhMkdV": {
     "code": "0bEjiVzC90GIjGBuUhMkdV",
     "year": "1990",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "2w5jT0nbRjeq5grOthosvW": {
     "code": "2w5jT0nbRjeq5grOthosvW",
@@ -757,7 +757,7 @@ var playlists = {
   "0an6ujiKy8v4rSwJJRXpkH": {
     "code": "0an6ujiKy8v4rSwJJRXpkH",
     "year": "1991",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "4BVUISE7uZ24hPIoaeGgbE": {
     "code": "4BVUISE7uZ24hPIoaeGgbE",
@@ -812,7 +812,7 @@ var playlists = {
   "2AzaQfNjOYUViktPFWcuBZ": {
     "code": "2AzaQfNjOYUViktPFWcuBZ",
     "year": "1992",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "6ZJSZrTGVI82eQZLRO4VAE": {
     "code": "6ZJSZrTGVI82eQZLRO4VAE",
@@ -867,7 +867,7 @@ var playlists = {
   "1FEE6kZ5tvJ932vP7hiy7D": {
     "code": "1FEE6kZ5tvJ932vP7hiy7D",
     "year": "1993",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "1vlxtxvGpq88BtRJxgkv2a": {
     "code": "1vlxtxvGpq88BtRJxgkv2a",
@@ -922,7 +922,7 @@ var playlists = {
   "2xLxXcnvgzK75yCLYPBuDx": {
     "code": "2xLxXcnvgzK75yCLYPBuDx",
     "year": "1994",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "6TH4CR1e9fLxFFIEzPSiBA": {
     "code": "6TH4CR1e9fLxFFIEzPSiBA",
@@ -977,7 +977,7 @@ var playlists = {
   "7KjVvZbXx9d8AmiZXvw6Da": {
     "code": "7KjVvZbXx9d8AmiZXvw6Da",
     "year": "1995",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "3kgLu9E2jUCc0CE0uwVmrn": {
     "code": "3kgLu9E2jUCc0CE0uwVmrn",
@@ -1032,7 +1032,7 @@ var playlists = {
   "5yIHM1TOTPs2ZR5dDTFNo8": {
     "code": "5yIHM1TOTPs2ZR5dDTFNo8",
     "year": "1996",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "2wddEUda4MQrfF9YCIDPZb": {
     "code": "2wddEUda4MQrfF9YCIDPZb",
@@ -1087,7 +1087,7 @@ var playlists = {
   "1xFO5AIZvaPdhvCfriimmA": {
     "code": "1xFO5AIZvaPdhvCfriimmA",
     "year": "1997",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "7DJtDi5GvpRV3ihdzb8oIv": {
     "code": "7DJtDi5GvpRV3ihdzb8oIv",
@@ -1142,7 +1142,7 @@ var playlists = {
   "5Y1kYZineOL1npkYAvAT7u": {
     "code": "5Y1kYZineOL1npkYAvAT7u",
     "year": "1998",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "3oKA8NYbWGWeWpon9dZzD2": {
     "code": "3oKA8NYbWGWeWpon9dZzD2",
@@ -1197,7 +1197,7 @@ var playlists = {
   "2poLudz0q7cNamGgSfv7Ef": {
     "code": "2poLudz0q7cNamGgSfv7Ef",
     "year": "1999",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "1AicOmLHazolgT3UjixJfb": {
     "code": "1AicOmLHazolgT3UjixJfb",
@@ -1252,7 +1252,7 @@ var playlists = {
   "3pSRAVbXkxTsF8H9UzxWXE": {
     "code": "3pSRAVbXkxTsF8H9UzxWXE",
     "year": "2000",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "3a6U7QzpaDUn8viz6MD8z0": {
     "code": "3a6U7QzpaDUn8viz6MD8z0",
@@ -1312,7 +1312,7 @@ var playlists = {
   "53GPi9rn1PzdrzLUsMc0vR": {
     "code": "53GPi9rn1PzdrzLUsMc0vR",
     "year": "2001",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "6lsNUVXo9HEiaHJbqZfoV1": {
     "code": "6lsNUVXo9HEiaHJbqZfoV1",
@@ -1372,7 +1372,7 @@ var playlists = {
   "3MUikOPeK8cdxCtoWb7Vt4": {
     "code": "3MUikOPeK8cdxCtoWb7Vt4",
     "year": "2002",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "35jc8ETscQhWnmAE2SgSjJ": {
     "code": "35jc8ETscQhWnmAE2SgSjJ",
@@ -1432,7 +1432,7 @@ var playlists = {
   "1zTgqQs1zQuzPJenMCH0QO": {
     "code": "1zTgqQs1zQuzPJenMCH0QO",
     "year": "2003",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "1xPMgxvAouF0uPMENGOcTk": {
     "code": "1xPMgxvAouF0uPMENGOcTk",
@@ -1492,7 +1492,7 @@ var playlists = {
   "7IQ1WKFiWRvwLndbD5umFv": {
     "code": "7IQ1WKFiWRvwLndbD5umFv",
     "year": "2004",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "69dmFo0wbQpvSDWvJucYk4": {
     "code": "69dmFo0wbQpvSDWvJucYk4",
@@ -1552,7 +1552,7 @@ var playlists = {
   "0GbQ86NVloSltBmLHKXfs6": {
     "code": "0GbQ86NVloSltBmLHKXfs6",
     "year": "2005",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "3HF287TvWDpnBOcV93iJDr": {
     "code": "3HF287TvWDpnBOcV93iJDr",
@@ -1612,7 +1612,7 @@ var playlists = {
   "1GN0l9XPvXvagL6uqdPME5": {
     "code": "1GN0l9XPvXvagL6uqdPME5",
     "year": "2006",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "6uuvvJTBwwWwXjH4lI0YxO": {
     "code": "6uuvvJTBwwWwXjH4lI0YxO",
@@ -1672,7 +1672,7 @@ var playlists = {
   "2IeYlOelIYmeBvCgU6dY4p": {
     "code": "2IeYlOelIYmeBvCgU6dY4p",
     "year": "2007",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "4veAsIVGzfJ93G1eSsNuMn": {
     "code": "4veAsIVGzfJ93G1eSsNuMn",
@@ -1732,7 +1732,7 @@ var playlists = {
   "3hrAZuQb0uPMYlqL5QWttO": {
     "code": "3hrAZuQb0uPMYlqL5QWttO",
     "year": "2008",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "0d5ivclS6kBteWQDdrMazj": {
     "code": "0d5ivclS6kBteWQDdrMazj",
@@ -1792,7 +1792,7 @@ var playlists = {
   "6Ls72UAy2cfxSB4y50LD6b": {
     "code": "6Ls72UAy2cfxSB4y50LD6b",
     "year": "2009",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "368AticlMDJyAGOrYikbVW": {
     "code": "368AticlMDJyAGOrYikbVW",
@@ -1852,7 +1852,7 @@ var playlists = {
   "5PxiCeXQruC8YxQou1Yg5z": {
     "code": "5PxiCeXQruC8YxQou1Yg5z",
     "year": "2010",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "66vkznxrNs4MIiTN4C2ab6": {
     "code": "66vkznxrNs4MIiTN4C2ab6",
@@ -1912,7 +1912,7 @@ var playlists = {
   "6eKpmrUQHt83kpSnghi2vL": {
     "code": "6eKpmrUQHt83kpSnghi2vL",
     "year": "2011",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "6F8AtVv1eON7UXqFRMaNms": {
     "code": "6F8AtVv1eON7UXqFRMaNms",
@@ -1972,7 +1972,7 @@ var playlists = {
   "1jrOSRQ3v0TqAxAGMRgZA2": {
     "code": "1jrOSRQ3v0TqAxAGMRgZA2",
     "year": "2012",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "0YRIC3sl4xg5gnjAclfzIM": {
     "code": "0YRIC3sl4xg5gnjAclfzIM",
@@ -2032,7 +2032,7 @@ var playlists = {
   "0LE4pilg8zQWokJIMY4xcA": {
     "code": "0LE4pilg8zQWokJIMY4xcA",
     "year": "2013",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "4rOdGTjUNoIiQrIHl8QS5p": {
     "code": "4rOdGTjUNoIiQrIHl8QS5p",
@@ -2092,7 +2092,7 @@ var playlists = {
   "6akk3ar1kB9yJJAkYOOKB4": {
     "code": "6akk3ar1kB9yJJAkYOOKB4",
     "year": "2014",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "0LZ3f36n5yivhuUGaXaiBr": {
     "code": "0LZ3f36n5yivhuUGaXaiBr",
@@ -2152,7 +2152,7 @@ var playlists = {
   "4HRFLRCvZXx8ALdnGvtc1h": {
     "code": "4HRFLRCvZXx8ALdnGvtc1h",
     "year": "2015",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "1PhGpkVtNb15U4ZzqVvSZs": {
     "code": "1PhGpkVtNb15U4ZzqVvSZs",
@@ -2212,7 +2212,7 @@ var playlists = {
   "1CQ8peDxh8GhQdnw7f3Xg0": {
     "code": "1CQ8peDxh8GhQdnw7f3Xg0",
     "year": "2016",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "1MO54sAou23urm6pNdVYV0": {
     "code": "1MO54sAou23urm6pNdVYV0",
@@ -2272,7 +2272,7 @@ var playlists = {
   "1NnxN2S33bgp3YGwxALz0D": {
     "code": "1NnxN2S33bgp3YGwxALz0D",
     "year": "2017",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "4twNWJj13Evb5ceoZrHo01": {
     "code": "4twNWJj13Evb5ceoZrHo01",
@@ -2327,7 +2327,7 @@ var playlists = {
   "5FUHne8H3RMd5hw7WaeWdv": {
     "code": "5FUHne8H3RMd5hw7WaeWdv",
     "year": "2018",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "7paKeaJBijeQgtDSQrdWhF": {
     "code": "7paKeaJBijeQgtDSQrdWhF",
@@ -2387,7 +2387,7 @@ var playlists = {
   "4e0HSY0NVjt96qm8Qvxf8n": {
     "code": "4e0HSY0NVjt96qm8Qvxf8n",
     "year": "2019",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "6Ue28yA5rGlDLpQ0A1oe3E": {
     "code": "6Ue28yA5rGlDLpQ0A1oe3E",
@@ -2447,7 +2447,7 @@ var playlists = {
   "6GkvOxKn4P5G8HI0UeAiZO": {
     "code": "6GkvOxKn4P5G8HI0UeAiZO",
     "year": "2020",
-    "genre": "Metal, Industrial, Rap-Core Christian"
+    "genre": "Metal, Industrial, Rapcore Christian"
   },
   "1jOo42WmNWo6xk5mM9RKXq": {
     "code": "1jOo42WmNWo6xk5mM9RKXq",
