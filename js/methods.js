@@ -125,22 +125,18 @@ $.testConnection = function () {
       resolve(false);
     }
     console.log("ready for ajax");
-    let request = $.ajax({
+    $.ajax({
       method: "GET",
       url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
       headers: {
         'Authorization': 'Bearer ' + $.accessToken
       }
-    });
-    request.done(function( response ) {
-      if(response.error) {
-        console.log(response.error);
-        resolve(false);
-      }
-      else {
-        console.log("no error");
-        resolve(true);
-      }
+    }).done(function( response ) {
+      console.log("no error");
+      resolve(true);
+    }).fail(function( response ) {
+      console.log(response.error);
+      resolve(false);
     });
   });
 };
