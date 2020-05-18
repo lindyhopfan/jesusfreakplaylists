@@ -26,6 +26,7 @@ $.nextYear = function() {
 };
 
 $.changeYear = function (year) {
+  window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.lastTab);
   let connectionOk = $.testConnection();
   if(!connectionOk) {
     console.log("bad connection");
@@ -78,7 +79,6 @@ $.changeYear = function (year) {
   });
   tabs.tabs("refresh");
   tabs.tabs("option", "active", preferredIndex);
-  window.history.pushState(null, null, '/#year=' + year + '&index=' + preferredIndex);
 
   if($.accessToken){
 
