@@ -31,7 +31,6 @@ $.changeYear = async function (year) {
     lastTab = 'RockChristian';
   }
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
-  console.log("ready to test");
   let connectionOk = await $.testConnection();
   if(!connectionOk) {
     $.showDialog();
@@ -120,7 +119,6 @@ $.testConnection = function () {
 
   return new Promise(function(resolve) {
     $.accessToken = Cookies.get('accessToken');
-    console.log("accessToken from Cookie", $.accessToken);
     let request = $.ajax({
       method: "GET",
       url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
@@ -130,7 +128,6 @@ $.testConnection = function () {
     });
     request.done(function( response ) {
       if(response.error) {
-        console.log("response error", response.error);
         resolve(false);
       }
       else {
@@ -142,7 +139,6 @@ $.testConnection = function () {
 
 $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
-  console.log("fetchAdditionalTracks",playlistCode);
   let tabDiv = $("#" + playlistCode);
 
   let request = $.ajax({
