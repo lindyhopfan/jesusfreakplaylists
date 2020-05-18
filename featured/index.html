@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jesus Freak Featured Playlists</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="Christian Music, Playlists, Christian Rock, Gospel">
+  <meta name="description" content="Christian Music Playlists">
+  <meta name="author" content="Joshua Payne">
+  <meta name="theme-color" content="#f5f6fa">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/index.css" media="screen,projection"/>
+  <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <link href="../css/confirmDialog.css" rel="stylesheet">
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <script src="../js/lodash.js"></script>
+  <script src="../js/confirmDialog.jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      $(function () {
+
+        $("#tabs").tabs({
+          activate: function( event, ui ) {
+            $.genre = _.get(ui, "newTab.0.innerText");
+            window.history.pushState(null, null, '/featured/#year=' + $.year + '&genre=' + $.genre.replace(/\s/g, '') );
+          }
+        });
+        let handle = $("#custom-handle");
+
+        $.minYear = 1949;
+        $.maxYear = 2020;
+        $.minYearShowcase = 1980;
+        $.maxYearShowcase = 2019;
+
+        $.year = $.urlParam('year', window.location.hash.substr(1)) || Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
+        let genre = $.urlParam('genre', window.location.hash.substr(1));
+        if(genre) {
+          $.genre = $.addSpaces(genre);
+        }
+        else {
+          $.genre = 'Rock Christian';
+        }
+
+        let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
+        if(accessToken) {
+          Cookies.set('accessToken', accessToken, { expires: 1 });
+          window.history.pushState(null, null, '/featured/');
+        }
+
+        $.setupDialog();
+        $.changeYear($.year);
+        $("#slider-vertical").slider({
+          orientation: "vertical",
+          range: "false",
+          animate: "fast",
+          min: $.minYear,
+          max: $.maxYear,
+          value: $.year,
+          create: function () {
+            handle.text($(this).slider("value"));
+          },
+          change: function (event, ui) {
+            $.changeYear(ui.value);
+          },
+          slide: function (event, ui) {
+            $("#year").val(ui.value);
+            handle.text(ui.value);
+          }
+        });
+        $("#year").val($("#slider-vertical").slider("value"));
+      });
+    });
+  </script>
+</head>
+
+<body style="background-color: #f5f6fa">
+<div>
+  <div class="row">
+    <div id="yearNavigation" class="col s1 m1 l1 center">
+
+      <p style="margin-top:30px; margin-bottom:-10px; color:limegreen;">
+        Use slider to pick a year
+      </p>
+
+      <div id="slider-vertical" style="height:600px;width:50px;margin-top:35px;">
+        <div id="custom-handle" class="ui-slider-handle" style="height:30px;width:56px;z-index:1;"></div>
+      </div>
+
+    </div>
+
+    <div id="portfolioColumn" class="col s11 m11 l11">
+
+      <div class="row">
+
+        <div id="portfolioTitle" class="col s5 m5 l5">
+          <p id="portfolioText">Jesus Freak Playlists</p>
+          <p id="portfolioSubtitle">
+            <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
+
+            <span style="white-space:nowrap;">
+              <button onclick="$.priorYear();">Prior</button>
+                <input type="text" id="year" readonly style="border:0; color:#f6931f; font-weight:bold; font-size: 2rem; display:inline; width: 67px; margin:0px 5px 0px 5px;">
+              <button onclick="$.nextYear();">Next</button>
+            </span>
+
+          </p>
+          <p id="trigger"></p>
+        </div>
+
+        <div id="playlists1" class="col s2 m2 l2">
+          <p>
+            <button onclick="$.changeYear('christianRockPioneers');">Christian Rock Pioneers</button>
+          </p>
+          <p>
+            <button onclick="$.changeYear('christianRockEighties');">Christian Rock 80s</button>
+          </p>
+          <p>
+            <button onclick="$.changeYear('christianRockNineties');">Christian Rock 90s</button>
+          </p>
+        </div>
+
+        <div id="playlists2" class="col s2 m2 l2">
+          <p>
+            <button onclick="$.changeYear('christianRock2k');">Christian Rock 2K</button>
+          </p>
+          <p>
+            <button onclick="$.changeYear('christianRockTens');">Christian Rock 10s</button>
+          </p>
+          <p>
+            <button onclick="$.changeYear('gospelGenres');">Gospel Genres</button>
+          </p>
+        </div>
+        <div id="playlists3" class="col s2 m2 l2">
+          <p>
+            <button onclick="$.changeYear('hymnsAndSongbooks');">Hymns and Songbooks</button>
+          </p>
+          <p>
+            <button onclick="$.changeYear('ultimatePlaylists');">Ultimate Playlists</button>
+          </p>
+          <p>
+            <button onclick="$.changeYear('secularPlaylists');">Secular Playlists</button>
+          </p>
+        </div>
+      </div>
+
+      <div class="row" id="portfolioItemContainer">
+
+        <div id="tabs">
+          <ul id="tab-headers"></ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="../js/methods.js?v=1.1.12"></script>
+<script type="text/javascript" src="../js/playlists.js?v=1.1.12"></script>
+</body>
+
+</html>
