@@ -272,7 +272,12 @@ $.addAlbumsToTab = function(albums, playlistCode) {
 };
 
 $.spotfiyLogin = function () {
-  window.location.href = "https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com/#year=" + $.year + "&genre=" + $.genre.replace(/\s/g, '');
+  if($.genre) {
+    window.location.href = "https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com/#year=" + $.year + "&genre=" + $.genre.replace(/\s/g, '');
+  }
+  else {
+    window.location.href = "https://accounts.spotify.com/authorize?client_id=3c0bcabb9b94479fa174125745f056ae&response_type=token&redirect_uri=http%3A%2F%2Fjesusfreakplaylists.com/#year=" + $.year + "&code=" + $.code;
+  }
 };
 
 $.setupDialog = function () {
