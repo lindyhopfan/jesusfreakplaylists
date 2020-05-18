@@ -25,13 +25,13 @@ $.nextYear = function() {
   $("#slider-vertical").slider('value', year);
 };
 
-$.changeYear = function (year) {
+$.changeYear = async function (year) {
   let lastTab = $.lastTab;
   if(!lastTab){
     lastTab = 'RockChristian';
   }
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
-  let connectionOk = $.testConnection();
+  let connectionOk = await $.testConnection();
   if(!connectionOk) {
     console.log("show dialog");
     $.showDialog();
@@ -119,25 +119,28 @@ $.fetchPlaylist = function(playlist) {
 
 $.testConnection = function () {
 
-  $.accessToken = Cookies.get('accessToken');
-  console.log("accessToken from Cookie", $.accessToken);
-  let request = $.ajax({
-    method: "GET",
-    url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
-    headers: {
-      'Authorization': 'Bearer ' + $.accessToken
-    }
+  return new Promise(resolve => {
+    $.accessToken = Cookies.get('accessToken');
+    console.log("accessToken from Cookie", $.accessToken);
+    let request = $.ajax({
+      method: "GET",
+      url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
+      headers: {
+        'Authorization': 'Bearer ' + $.accessToken
+      }
+    });
+    request.done(function( response ) {
+      if(response.error) {
+        console.log("response error", response.error);
+        return false;
+      }
+      else {
+        console.log("good connection");
+        return true;
+      }
+    });
   });
-  request.done(function( response ) {
-    if(response.error) {
-      console.log("response error", response.error);
-      return false;
-    }
-    else {
-      console.log("good connection");
-      return true;
-    }
-  });
+
 };
 
 $.fetchAdditionalTracks = function (url, playlistCode, albums) {
