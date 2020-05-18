@@ -26,7 +26,7 @@ $.nextYear = function() {
 };
 
 $.changeYear = function (year) {
-  window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.lastTab);
+  window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.lastTab || 'rock');
   let connectionOk = $.testConnection();
   if(!connectionOk) {
     console.log("bad connection");
