@@ -35,6 +35,7 @@
         $("#tabs").tabs({
           activate: function( event, ui ) {
             let code = _.get(ui, "newTab.0.id");
+            console.log("code",code);
             $.code = code.substring(1, code.length);
             window.history.pushState(null, null, '/featured/#year=' + $.year + '&code=' + $.code );
           }
