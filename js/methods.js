@@ -5,6 +5,10 @@ $.urlParam = function (name, queryString) {
   return (results !== null) ? results[1] || 0 : false;
 };
 
+$.addSpaces = function(arg) {
+  return arg.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); });
+};
+
 $.priorYear = function() {
   if($.year != $.minYear){
     $.year--;

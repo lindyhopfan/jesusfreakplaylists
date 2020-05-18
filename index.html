@@ -45,16 +45,11 @@
         $.minYearShowcase = 1980;
         $.maxYearShowcase = 2019;
 
-        let year = $.urlParam('year', window.location.hash.substr(1));
-        let genre = $.urlParam('genre', window.location.hash.substr(1));
-        console.log("year", year);
-        console.log("genre", genre);
-        if(year) {
-          $.year = year;
-        }
-        else {
-          $.year = Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
-        }
+        $.year = $.urlParam('year', window.location.hash.substr(1)) || Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
+        $.genre = $.addSpaces($.urlParam('genre', window.location.hash.substr(1))) || 'Rock Christian';
+        console.log("year", $.year);
+        console.log("genre", $.genre);
+
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
         if(accessToken) {
           Cookies.set('accessToken', accessToken, { expires: 1 });
