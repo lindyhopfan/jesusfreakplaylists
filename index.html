@@ -45,6 +45,7 @@
         let year = Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
 
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
+        console.log("accessToken from url", accessToken);
         if(accessToken) {
           Cookies.set('accessToken', accessToken, { expires: 1 });
           window.history.pushState(null, null, '/');

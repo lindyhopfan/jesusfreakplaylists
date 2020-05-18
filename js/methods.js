@@ -33,11 +33,9 @@ $.changeYear = function (year) {
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
   let connectionOk = $.testConnection();
   if(!connectionOk) {
-    console.log("bad connection");
     $.showDialog();
     return false;
   }
-  console.log("no return");
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
   });
@@ -120,6 +118,7 @@ $.fetchPlaylist = function(playlist) {
 $.testConnection = function () {
 
   $.accessToken = Cookies.get('accessToken');
+  console.log("accessToken from Cookie", $.accessToken);
   let request = $.ajax({
     method: "GET",
     url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
@@ -128,7 +127,6 @@ $.testConnection = function () {
     }
   });
   request.done(function( response ) {
-    console.log("response", response);
     if(response.error) {
       return false;
     }
