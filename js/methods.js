@@ -128,9 +128,11 @@ $.testConnection = function () {
   });
   request.done(function( response ) {
     if(response.error) {
+      console.log("response error", response.error);
       return false;
     }
     else {
+      console.log("good connection");
       return true;
     }
   });
