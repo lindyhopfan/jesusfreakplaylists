@@ -6,26 +6,26 @@ $.urlParam = function (name, queryString) {
 };
 
 $.priorYear = function() {
-  let year = $("#year").val();
-  if(year != $.minYear){
-    year--;
-    $("#year").val(year);
+  if($.year != $.minYear){
+    $.year--;
+    $("#year").val($.year);
   }
-  $("#custom-handle").text(year);
-  $("#slider-vertical").slider('value', year);
+  $("#custom-handle").text($.year);
+  $("#slider-vertical").slider('value', $.year);
 };
 
 $.nextYear = function() {
-  let year = $("#year").val();
-  if(year != $.maxYear){
-    year++;
-    $("#year").val(year);
+  if($.year != $.maxYear){
+    $.year++;
+    $("#year").val($.year);
   }
-  $("#custom-handle").text(year);
-  $("#slider-vertical").slider('value', year);
+  $("#custom-handle").text($.year);
+  $("#slider-vertical").slider('value', $.year);
 };
 
 $.changeYear = async function (year) {
+  $.year = year;
+  $("#year").val($.year);
   let lastTab = $.lastTab;
   if(!lastTab){
     lastTab = 'RockChristian';

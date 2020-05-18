@@ -35,9 +35,11 @@
         $("#tabs").tabs({
           activate: function( event, ui ) {
             $.lastTab = _.get(ui, "newTab.0.innerText");
+            window.history.pushState(null, null, '/#year=' + $.year + '&genre=' + $.lastTab.replace(/\s/g, '') );
           }
         });
         let handle = $("#custom-handle");
+        $.year = $("#year").val();
         $.minYear = 1949;
         $.maxYear = 2020;
         $.minYearShowcase = 1980;
