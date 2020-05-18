@@ -2664,6 +2664,11 @@ var playlists = {
     "year": "gospelGenres",
     "genre": "Hipster Gospel"
   },
+  "7qlzbNVxd4sm5NLefKLhoT": {
+    "code": "7qlzbNVxd4sm5NLefKLhoT",
+    "year": "gospelGenres",
+    "genre": "Swing-a-Billy Gospel"
+  },
   "5vFIIw1yT0WlKI4vvAfpCg": {
     "code": "5vFIIw1yT0WlKI4vvAfpCg",
     "year": "gospelGenres",
