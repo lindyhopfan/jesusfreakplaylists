@@ -54,8 +54,6 @@ $.changeYear = async function (year) {
     let link = $("<a>");
     link.attr("href", "#" + playlist.code);
     link.text(playlist.genre);
-    console.log("$.genre", "." + $.genre + ".");
-    console.log("playlist.genre", "." + playlist.genre + ".");
     if($.genre == playlist.genre){
       preferredIndex = index;
     }
