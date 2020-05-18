@@ -6,7 +6,7 @@ $.urlParam = function (name, queryString) {
 };
 
 $.addSpaces = function(arg) {
-  return arg.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); });
+  return $.trim(arg.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); }));
 };
 
 $.priorYear = function() {
