@@ -2684,10 +2684,10 @@ var playlists = {
     "year": "gospelGenres",
     "genre": "Jamaican Gospel"
   },
-  "3Fwq9nwvShEK9awUt7RKrI": {
-    "code": "3Fwq9nwvShEK9awUt7RKrI",
+  "0L5m4357HFIF6I4Jkqy8Jm": {
+    "code": "0L5m4357HFIF6I4Jkqy8Jm",
     "year": "hymnsAndSongbooks",
-    "genre": "Hymnal"
+    "genre": "Songs and Creations"
   },
   "3apKjHEMvyoMCWnPKOo7Rm": {
     "code": "3apKjHEMvyoMCWnPKOo7Rm",
@@ -2699,15 +2699,15 @@ var playlists = {
     "year": "hymnsAndSongbooks",
     "genre": "Hymns Vol 2: Great Hymns of the Faith"
   },
+  "3Fwq9nwvShEK9awUt7RKrI": {
+    "code": "3Fwq9nwvShEK9awUt7RKrI",
+    "year": "hymnsAndSongbooks",
+    "genre": "Hymns Sampler"
+  },
   "5B1LgVwEfVLYwQhLqoUmwZ": {
     "code": "5B1LgVwEfVLYwQhLqoUmwZ",
     "year": "hymnsAndSongbooks",
     "genre": "Hymns For Christmas"
-  },
-  "0L5m4357HFIF6I4Jkqy8Jm": {
-    "code": "0L5m4357HFIF6I4Jkqy8Jm",
-    "year": "hymnsAndSongbooks",
-    "genre": "Songs and Creations"
   },
   "7hKkVUavwYAOaihEfDhDMo": {
     "code": "7hKkVUavwYAOaihEfDhDMo",
