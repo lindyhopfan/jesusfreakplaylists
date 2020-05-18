@@ -29,7 +29,6 @@ $.nextYear = function() {
 
 $.changeYear = async function (year) {
   $.year = year;
-  $("#year").val($.year);
   $("#year").text($.year);
 
   if($.genre) {
