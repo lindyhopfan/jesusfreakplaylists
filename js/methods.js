@@ -32,6 +32,7 @@ $.changeYear = function (year) {
     $.showDialog();
     return false;
   }
+  console.log("no return");
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
   });
@@ -135,6 +136,7 @@ $.testConnection = function () {
 
 $.fetchAdditionalTracks = function (url, playlistCode, albums) {
 
+  console.log("fetchAdditionalTracks",playlistCode);
   let tabDiv = $("#" + playlistCode);
 
   let request = $.ajax({
