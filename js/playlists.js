@@ -2509,10 +2509,10 @@ var playlists = {
     "year": "featured",
     "genre": "Swing-a-Billy Gospel"
   },
-  "0L5m4357HFIF6I4Jkqy8Jm": {
-    "code": "0L5m4357HFIF6I4Jkqy8Jm",
+  "2B8ftJsYNtYjJo0LHWahUi": {
+    "code": "2B8ftJsYNtYjJo0LHWahUi",
     "year": "featured",
-    "genre": "Songs and Creations"
+    "genre": "Songs and Creations Extended"
   },
   "29nXAvWhkGDcGzObEXOrxP": {
     "code": "29nXAvWhkGDcGzObEXOrxP",
@@ -2703,6 +2703,11 @@ var playlists = {
     "code": "5B1LgVwEfVLYwQhLqoUmwZ",
     "year": "hymnsAndSongbooks",
     "genre": "Hymns For Christmas"
+  },
+  "0L5m4357HFIF6I4Jkqy8Jm": {
+    "code": "0L5m4357HFIF6I4Jkqy8Jm",
+    "year": "hymnsAndSongbooks",
+    "genre": "Songs and Creations"
   },
   "7hKkVUavwYAOaihEfDhDMo": {
     "code": "7hKkVUavwYAOaihEfDhDMo",
