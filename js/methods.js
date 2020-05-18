@@ -30,6 +30,7 @@ $.changeYear = function (year) {
   if(!connectionOk) {
     console.log("bad connection");
     $.showDialog();
+    return false;
   }
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
