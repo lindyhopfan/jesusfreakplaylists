@@ -39,13 +39,13 @@
           }
         });
 
-        $.year = "various";
+        $.year = $.urlParam('year', window.location.hash.substr(1)) || "christianRockPioneers";
         let genre = $.urlParam('genre', window.location.hash.substr(1));
         if(genre) {
           $.genre = $.addSpaces(genre);
         }
         else {
-          $.genre = 'Rock Christian';
+          $.genre = 'Christian ROCK History 1: Pioneers (1956-1968)';
         }
 
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
