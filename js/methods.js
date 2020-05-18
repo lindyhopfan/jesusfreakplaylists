@@ -26,14 +26,16 @@ $.nextYear = function() {
 };
 
 $.changeYear = function (year) {
+  let connectionOk = $.testConnection();
+  if(!connectionOk) {
+    return false;
+  }
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
   });
 
   let tabs = $("#tabs").tabs();
   let ul = tabs.find("ul");
-
-  $.accessToken = Cookies.get('accessToken');
 
   ul.empty();
   tabs.find("div").remove();
@@ -92,9 +94,6 @@ $.changeYear = function (year) {
 
     });
   }
-  if(!$.accessToken){
-    $.showDialog();
-  }
 };
 
 $.fetchPlaylist = function(playlist) {
@@ -109,6 +108,27 @@ $.fetchPlaylist = function(playlist) {
 
   $.fetchAdditionalTracks('https://api.spotify.com/v1/playlists/' + playlist.code + '/tracks', playlist.code, albums);
 
+};
+
+$.testConnection = function () {
+
+  $.accessToken = Cookies.get('accessToken');
+  let request = $.ajax({
+    method: "GET",
+    url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
+    headers: {
+      'Authorization': 'Bearer ' + $.accessToken
+    }
+  });
+  request.done(function( response ) {
+    if(response.error) {
+      $.showDialog();
+      return false;
+    }
+    else {
+      return true;
+    }
+  });
 };
 
 $.fetchAdditionalTracks = function (url, playlistCode, albums) {
