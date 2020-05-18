@@ -33,7 +33,6 @@ $.changeYear = async function (year) {
 
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.genre.replace(/\s/g, '') );
   let connectionOk = await $.testConnection();
-  console.log("connectionOk", connectionOk);
   if(!connectionOk) {
     $.showDialog();
   }
@@ -55,6 +54,8 @@ $.changeYear = async function (year) {
     let link = $("<a>");
     link.attr("href", "#" + playlist.code);
     link.text(playlist.genre);
+    console.log("$.genre", "." + $.genre + ".");
+    console.log("playlist.genre", "." + playlist.genre + ".");
     if($.genre == playlist.genre){
       preferredIndex = index;
     }
@@ -124,7 +125,6 @@ $.testConnection = function () {
     if(!$.accessToken){
       resolve(false);
     }
-    console.log("ready for ajax");
     $.ajax({
       method: "GET",
       url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
@@ -132,10 +132,8 @@ $.testConnection = function () {
         'Authorization': 'Bearer ' + $.accessToken
       }
     }).done(function( response ) {
-      console.log("no error");
       resolve(true);
     }).fail(function( response ) {
-      console.log(response.error);
       resolve(false);
     });
   });
