@@ -2504,6 +2504,11 @@ var playlists = {
     "year": "featured",
     "genre": "Featured Christian Music"
   },
+  "1EMFBDP0CNULNJu5Jzia35": {
+    "code": "1EMFBDP0CNULNJu5Jzia35",
+    "year": "featured",
+    "genre": "Swing-a-Billy Gospel"
+  },
   "1FosAaaKAiHWrNgt5kLc1B": {
     "code": "1FosAaaKAiHWrNgt5kLc1B",
     "year": "christianRockPioneers",
@@ -2643,11 +2648,6 @@ var playlists = {
     "code": "5CWgRfh1TYU8b0dpDD5bj2",
     "year": "gospelGenres",
     "genre": "Hipster Gospel"
-  },
-  "1EMFBDP0CNULNJu5Jzia35": {
-    "code": "1EMFBDP0CNULNJu5Jzia35",
-    "year": "gospelGenres",
-    "genre": "Swing-a-Billy Gospel"
   },
   "5vFIIw1yT0WlKI4vvAfpCg": {
     "code": "5vFIIw1yT0WlKI4vvAfpCg",
