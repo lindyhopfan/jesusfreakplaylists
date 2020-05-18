@@ -121,6 +121,9 @@ $.testConnection = function () {
 
   return new Promise(function(resolve) {
     $.accessToken = Cookies.get('accessToken');
+    if(!$.accessToken){
+      resolve(false);
+    }
     let request = $.ajax({
       method: "GET",
       url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
