@@ -2509,6 +2509,11 @@ var playlists = {
     "year": "featured",
     "genre": "Swing-a-Billy Gospel"
   },
+  "6nNveLzVGGoFwy0C2cEu5Z": {
+    "code": "6nNveLzVGGoFwy0C2cEu5Z",
+    "year": "featured",
+    "genre": "Salsa Christiana"
+  },
   "2B8ftJsYNtYjJo0LHWahUi": {
     "code": "2B8ftJsYNtYjJo0LHWahUi",
     "year": "featured",
@@ -2668,6 +2673,11 @@ var playlists = {
     "code": "7qlzbNVxd4sm5NLefKLhoT",
     "year": "gospelGenres",
     "genre": "Swing-a-Billy Gospel"
+  },
+  "32NikrtYlA0B5l86z0ksnv": {
+    "code": "32NikrtYlA0B5l86z0ksnv",
+    "year": "gospelGenres",
+    "genre": "Salsa Christiana"
   },
   "5vFIIw1yT0WlKI4vvAfpCg": {
     "code": "5vFIIw1yT0WlKI4vvAfpCg",
