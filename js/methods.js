@@ -31,7 +31,7 @@ $.changeYear = async function (year) {
   $.year = year;
   $("#year").val($.year);
 
-  window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.genre );
+  window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.genre.replace(/\s/g, '') );
   let connectionOk = await $.testConnection();
   if(!connectionOk) {
     $.showDialog();
