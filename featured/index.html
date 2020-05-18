@@ -38,14 +38,8 @@
             window.history.pushState(null, null, '/featured/#year=' + $.year + '&genre=' + $.genre.replace(/\s/g, '') );
           }
         });
-        let handle = $("#custom-handle");
 
-        $.minYear = 1949;
-        $.maxYear = 2020;
-        $.minYearShowcase = 1980;
-        $.maxYearShowcase = 2019;
-
-        $.year = $.urlParam('year', window.location.hash.substr(1)) || Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
+        $.year = "various";
         let genre = $.urlParam('genre', window.location.hash.substr(1));
         if(genre) {
           $.genre = $.addSpaces(genre);
@@ -62,25 +56,6 @@
 
         $.setupDialog();
         $.changeYear($.year);
-        $("#slider-vertical").slider({
-          orientation: "vertical",
-          range: "false",
-          animate: "fast",
-          min: $.minYear,
-          max: $.maxYear,
-          value: $.year,
-          create: function () {
-            handle.text($(this).slider("value"));
-          },
-          change: function (event, ui) {
-            $.changeYear(ui.value);
-          },
-          slide: function (event, ui) {
-            $("#year").val(ui.value);
-            handle.text(ui.value);
-          }
-        });
-        $("#year").val($("#slider-vertical").slider("value"));
       });
     });
   </script>
@@ -89,33 +64,15 @@
 <body style="background-color: #f5f6fa">
 <div>
   <div class="row">
-    <div id="yearNavigation" class="col s1 m1 l1 center">
-
-      <p style="margin-top:30px; margin-bottom:-10px; color:limegreen;">
-        Use slider to pick a year
-      </p>
-
-      <div id="slider-vertical" style="height:600px;width:50px;margin-top:35px;">
-        <div id="custom-handle" class="ui-slider-handle" style="height:30px;width:56px;z-index:1;"></div>
-      </div>
-
-    </div>
 
     <div id="portfolioColumn" class="col s11 m11 l11">
 
       <div class="row">
 
         <div id="portfolioTitle" class="col s5 m5 l5">
-          <p id="portfolioText">Jesus Freak Playlists</p>
+          <p id="portfolioText">Jesus Freak Featured Playlists</p>
           <p id="portfolioSubtitle">
-            <span id="firstCategoryText" style="display:inline;">Christian Music, All Genres, Organized by Year</span>
-
-            <span style="white-space:nowrap;">
-              <button onclick="$.priorYear();">Prior</button>
-                <input type="text" id="year" readonly style="border:0; color:#f6931f; font-weight:bold; font-size: 2rem; display:inline; width: 67px; margin:0px 5px 0px 5px;">
-              <button onclick="$.nextYear();">Next</button>
-            </span>
-
+            <span id="firstCategoryText" style="display:inline;">Christian Music Featured Playlists</span>
           </p>
           <p id="trigger"></p>
         </div>
