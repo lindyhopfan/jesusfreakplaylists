@@ -39,13 +39,22 @@
           }
         });
         let handle = $("#custom-handle");
-        $.year = $("#year").val();
+
         $.minYear = 1949;
         $.maxYear = 2020;
         $.minYearShowcase = 1980;
         $.maxYearShowcase = 2019;
-        let year = Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
 
+        let year = $.urlParam('year', window.location.hash.substr(1));
+        let genre = $.urlParam('genre', window.location.hash.substr(1));
+        console.log("year", year);
+        console.log("genre", genre);
+        if(year) {
+          $.year = year;
+        }
+        else {
+          $.year = Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
+        }
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
         if(accessToken) {
           Cookies.set('accessToken', accessToken, { expires: 1 });
@@ -53,14 +62,14 @@
         }
 
         $.setupDialog();
-        $.changeYear(year);
+        $.changeYear($.year);
         $("#slider-vertical").slider({
           orientation: "vertical",
           range: "false",
           animate: "fast",
           min: $.minYear,
           max: $.maxYear,
-          value: year,
+          value: $.year,
           create: function () {
             handle.text($(this).slider("value"));
           },
