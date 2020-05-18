@@ -46,7 +46,13 @@
         $.maxYearShowcase = 2019;
 
         $.year = $.urlParam('year', window.location.hash.substr(1)) || Math.floor(Math.random()*($.maxYearShowcase-$.minYearShowcase+1)+$.minYearShowcase);
-        $.genre = $.addSpaces($.urlParam('genre', window.location.hash.substr(1))) || 'Rock Christian';
+        let genre = $.urlParam('genre', window.location.hash.substr(1));
+        if(genre) {
+          $.genre = $.addSpaces(genre);
+        }
+        else {
+          $.genre = 'Rock Christian';
+        }
 
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
         if(accessToken) {
