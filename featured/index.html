@@ -41,8 +41,6 @@
 
         $.year = $.urlParam('year', window.location.hash.substr(1)) || 'christianRockPioneers';
         $.code = $.urlParam('code', window.location.hash.substr(1)) || '1FosAaaKAiHWrNgt5kLc1B';
-        console.log("$.year",$.year);
-        console.log("$.code",$.code);
 
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
         if(accessToken) {
