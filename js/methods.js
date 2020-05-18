@@ -31,7 +31,9 @@ $.changeYear = async function (year) {
     lastTab = 'RockChristian';
   }
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
+  console.log("ready to test");
   await $.testConnection();
+  console.log("tested");
   if(!$.connectionOk) {
     console.log("show dialog");
     $.showDialog();
@@ -138,6 +140,7 @@ $.testConnection = function () {
         console.log("good connection");
         $.connectionOk = true;
       }
+      return true;
     });
   });
 
