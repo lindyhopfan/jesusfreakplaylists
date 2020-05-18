@@ -2519,6 +2519,11 @@ var playlists = {
     "year": "featured",
     "genre": "Hymns Vol 1: Living Hymns Extended"
   },
+  "4rdwIaTbUD5kOLGNdnSl1G": {
+    "code": "4rdwIaTbUD5kOLGNdnSl1G",
+    "year": "featured",
+    "genre": "Hymns Vol 2: Great Hymns of the Faith Extended"
+  },
   "1FosAaaKAiHWrNgt5kLc1B": {
     "code": "1FosAaaKAiHWrNgt5kLc1B",
     "year": "christianRockPioneers",
