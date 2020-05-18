@@ -57,7 +57,7 @@ $.changeYear = async function (year) {
   _.each(yearPlaylists, function (playlist) {
 
     let headerLi = $("<li>");
-    headerLi.attr("id", playlist.code);
+    headerLi.attr("title", playlist.code);
     let link = $("<a>");
     link.attr("href", "#" + playlist.code);
     link.text(playlist.genre);
