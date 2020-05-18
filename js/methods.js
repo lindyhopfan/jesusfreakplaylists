@@ -130,9 +130,11 @@ $.testConnection = function () {
     });
     request.done(function( response ) {
       if(response.error) {
+        console.log(response.error);
         resolve(false);
       }
       else {
+        console.log("no error");
         resolve(true);
       }
     });
