@@ -33,9 +33,11 @@ $.changeYear = function (year) {
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
   let connectionOk = $.testConnection();
   if(!connectionOk) {
+    console.log("show dialog");
     $.showDialog();
     return false;
   }
+  console.log("connection ok");
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
   });
