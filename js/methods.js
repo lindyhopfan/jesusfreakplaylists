@@ -124,6 +124,7 @@ $.testConnection = function () {
     if(!$.accessToken){
       resolve(false);
     }
+    console.log("ready for ajax");
     let request = $.ajax({
       method: "GET",
       url: 'https://api.spotify.com/v1/playlists/4pNCAzJDFPOrfeTpxwZsB8/tracks',
