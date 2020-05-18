@@ -34,19 +34,14 @@
 
         $("#tabs").tabs({
           activate: function( event, ui ) {
-            $.genre = _.get(ui, "newTab.0.innerText");
-            window.history.pushState(null, null, '/featured/#year=' + $.year + '&genre=' + $.genre.replace(/\s/g, '') );
+            let code = _.get(ui, "newTab.0.id");
+            $.code = code.substring(1, code.length);
+            window.history.pushState(null, null, '/featured/#year=' + $.year + '&code=' + $.code );
           }
         });
 
-        $.year = $.urlParam('year', window.location.hash.substr(1)) || "christianRockPioneers";
-        let genre = $.urlParam('genre', window.location.hash.substr(1));
-        if(genre) {
-          $.genre = $.addSpaces(genre);
-        }
-        else {
-          $.genre = 'Christian ROCK History 1: Pioneers (1956-1968)';
-        }
+        $.year = $.urlParam('year', window.location.hash.substr(1)) || 'christianRockPioneers';
+        $.code = $.urlParam('code', window.location.hash.substr(1)) || '1FosAaaKAiHWrNgt5kLc1B';
 
         let accessToken = $.urlParam('access_token', window.location.hash.substr(1));
         if(accessToken) {

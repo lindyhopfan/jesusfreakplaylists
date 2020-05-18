@@ -31,7 +31,13 @@ $.changeYear = async function (year) {
   $.year = year;
   $("#year").val($.year);
 
-  window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.genre.replace(/\s/g, '') );
+  if($.genre) {
+    window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.genre.replace(/\s/g, '') );
+  }
+  else {
+    window.history.pushState(null, null, '/#year=' + year + '&code=' + $.code );
+  }
+
   let connectionOk = await $.testConnection();
   if(!connectionOk) {
     $.showDialog();
@@ -54,7 +60,7 @@ $.changeYear = async function (year) {
     let link = $("<a>");
     link.attr("href", "#" + playlist.code);
     link.text(playlist.genre);
-    if($.genre == playlist.genre){
+    if(($.genre == playlist.genre)||$.code == playlist.code){
       preferredIndex = index;
     }
     headerLi.html(link);
