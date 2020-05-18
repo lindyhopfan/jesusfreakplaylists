@@ -29,7 +29,6 @@ $.nextYear = function() {
 
 $.changeYear = async function (year) {
   $.year = year;
-  $("#year").val($.year);
 
   if($.genre) {
     window.history.pushState(null, null, '/#year=' + year + '&genre=' + $.genre.replace(/\s/g, '') );
