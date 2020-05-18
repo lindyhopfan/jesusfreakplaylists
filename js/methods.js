@@ -33,13 +33,7 @@ $.changeYear = async function (year) {
   window.history.pushState(null, null, '/#year=' + year + '&genre=' + lastTab );
   console.log("ready to test");
   await $.testConnection();
-  console.log("tested");
-  if(!$.connectionOk) {
-    console.log("show dialog");
-    $.showDialog();
-    return false;
-  }
-  console.log("connection ok");
+
   let yearPlaylists = _.filter(playlists, function (o) {
     return o.year == year;
   });
@@ -134,13 +128,8 @@ $.testConnection = function () {
     request.done(function( response ) {
       if(response.error) {
         console.log("response error", response.error);
-        $.connectionOk = false;
+        $.showDialog();
       }
-      else {
-        console.log("good connection");
-        $.connectionOk = true;
-      }
-      return true;
     });
   });
 
